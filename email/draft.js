@@ -24,7 +24,7 @@ const specPath = args.find((a) => a.endsWith(".json") && args[args.indexOf(a) - 
 if (!specPath) { console.error("usage: node draft.js <spec.json> [--data values.json] [--set key=value] [--sample] [--png] [--eml]"); process.exit(1); }
 
 const spec = JSON.parse(fs.readFileSync(specPath, "utf8"));
-spec.id = spec.id || path.basename(specPath, ".json");
+spec.id = path.basename(specPath, ".json"); // output files are named after the spec file
 let data = {};
 if (opt("--data")) data = JSON.parse(fs.readFileSync(opt("--data"), "utf8"));
 args.forEach((a, i) => { if (a === "--set") { const [k, ...v] = args[i + 1].split("="); data[k] = v.join("="); } });
