@@ -1,0 +1,81 @@
+{
+  "id": "newsletter",
+  "group": "after",
+  "kind": "branded",
+  "name": "Monthly newsletter",
+  "when": "Once a month, to clients and anyone who signed up.",
+  "subject": "{{month}} notes from Fieldwise",
+  "preheader": "One idea, three quick wins, and what we shipped.",
+  "label": "{{month}} notes",
+  "footer": "dark",
+  "unsubscribe": true,
+  "blocks": [
+    {
+      "type": "banner",
+      "src": "banner-news"
+    },
+    {
+      "type": "heading",
+      "text": "{{nl_title}}"
+    },
+    {
+      "type": "text",
+      "text": "For most local businesses, the first thing a new customer sees isn’t the website. It’s the Google profile: photos, hours, reviews and a call button. Plenty of people call straight from there and never open the site."
+    },
+    {
+      "type": "text",
+      "text": "So the profile deserves the same care as the homepage. Up-to-date photos, the right hours and replies to reviews tell people you’re open, active and worth choosing."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Three things to do this month"
+    },
+    {
+      "type": "features",
+      "items": [
+        [
+          "Add ten photos",
+          "Real ones: the place, the team, the work."
+        ],
+        [
+          "Reply to reviews",
+          "Thank the good ones; answer the bad ones calmly."
+        ],
+        [
+          "Check your hours",
+          "Including holidays. Wrong hours lose customers."
+        ]
+      ]
+    },
+    {
+      "type": "work",
+      "title": "What we shipped",
+      "items": [
+        {
+          "src": "work-resort",
+          "title": "A resort in Indore",
+          "text": "Website, online room booking, and event enquiries that go straight to WhatsApp."
+        },
+        {
+          "src": "work-offpay",
+          "title": "OffPay",
+          "text": "11,700+ people used it in its first eight weeks; two in three found it on Google."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Thinking about your own site?",
+      "text": "Reply to this email, or message us on WhatsApp.",
+      "button": {
+        "label": "Start a project",
+        "href": "mailto:fieldwisesolutions1@gmail.com?subject=New%20project"
+      }
+    },
+    {
+      "type": "signoff",
+      "text": "Until next month,"
+    }
+  ]
+}

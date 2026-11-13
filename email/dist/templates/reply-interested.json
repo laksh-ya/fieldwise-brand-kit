@@ -1,0 +1,27 @@
+{
+  "id": "reply-interested",
+  "group": "replies",
+  "kind": "letter",
+  "name": "They’re interested",
+  "when": "They replied yes or asked to talk.",
+  "subject": "Re: {{company}} on Google",
+  "preheader": "Two times that work this week.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, great to hear."
+    },
+    {
+      "type": "text",
+      "text": "Would {{slot_1}} or {{slot_2}} work for a 15-minute call? Or pick any time here: <a href=\"{{call_link}}\">{{call_link}}</a>"
+    },
+    {
+      "type": "text",
+      "text": "I’ll share my screen and show you the three changes on your own site, so there’s nothing to prepare."
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

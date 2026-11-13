@@ -1,0 +1,49 @@
+{
+  "id": "cold-1-first-touch",
+  "group": "cold",
+  "kind": "letter",
+  "name": "1 · First email",
+  "when": "Day 1. One real observation, one piece of proof, one small ask.",
+  "subject": "{{company}} on Google",
+  "preheader": "I searched {{search_term}} this morning.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}},"
+    },
+    {
+      "type": "text",
+      "text": "I searched “{{search_term}}” this morning. {{company}} showed up {{observation}}."
+    },
+    {
+      "type": "text",
+      "text": "Your site also takes about {{load_time}} seconds to open on a phone, which is where most of those searches happen. Many people give up before it loads."
+    },
+    {
+      "type": "text",
+      "text": "We’re Fieldwise. We build fast websites, sort out Google listings and set up bookings that land on WhatsApp. Here’s one from this year:"
+    },
+    {
+      "type": "work",
+      "items": [
+        {
+          "src": "work-resort",
+          "title": "A resort in Indore",
+          "text": "Website, online room booking, and event enquiries that go straight to WhatsApp."
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "I’ve written a short note on the three changes that would help {{company}} most. Shall I send it over?"
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    },
+    {
+      "type": "ps",
+      "text": "P.S. If someone else looks after the website, who should I ask?"
+    }
+  ]
+}

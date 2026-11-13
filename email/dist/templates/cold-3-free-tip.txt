@@ -4,6 +4,7 @@ Hi {{first_name}},
 
 Here’s one change from the note that you can make today, without us:
 
+Today’s fix
 {{quick_win}}
 
 The other two take a bit more work. I can walk you through them in a 15-minute call, or just send them over. Whichever is easier.
@@ -12,4 +13,3 @@ Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com

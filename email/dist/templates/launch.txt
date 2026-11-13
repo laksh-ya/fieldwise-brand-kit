@@ -1,16 +1,22 @@
 Subject: Your new website is live
 
-Your new website is live.
+Live
 
-Hi {{first_name}}, {{client_site}} went live this morning. It opens in under two seconds on a mid-range phone, and every booking request now reaches your team on WhatsApp and email.
+{{client_site}} is live.
+
+Every booking request now reaches your team on WhatsApp and email.
 
 Visit your site: {{client_url}}
 
-What happens next
+{{stat_1}} {{stat_1_label}}
+{{stat_2}} {{stat_2_label}}
+{{stat_3}} {{stat_3_label}}
 
-- This week: We watch the first bookings come in and fix anything that feels slow.
-- In two weeks: Your Google Business Profile updates with the new hours and photos.
-- Every month: A one-page note on what moved and what didn’t.
+Hi {{first_name}}, congratulations. Here’s what happens from here:
+
+1. This week: We watch the first bookings come in and fix anything that feels slow.
+2. In two weeks: Your Google profile updates with the new hours and photos.
+3. Every month: A one-page note on what moved and what didn’t.
 
 Reply to this email with anything you’d like changed.
 
@@ -18,7 +24,6 @@ Congratulations,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 --
 Fieldwise · Websites, search and brand. Grow where it counts.

@@ -1,0 +1,33 @@
+{
+  "id": "cold-3-free-tip",
+  "group": "cold",
+  "kind": "letter",
+  "name": "3 · One free fix",
+  "when": "Day 7, new thread. Give away one fix they can do themselves.",
+  "subject": "One thing for {{company}} this week",
+  "preheader": "A fix you can make today, no help needed.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}},"
+    },
+    {
+      "type": "text",
+      "text": "Here’s one change from the note that you can make today, without us:"
+    },
+    {
+      "type": "note",
+      "tone": "green",
+      "title": "Today’s fix",
+      "text": "{{quick_win}}"
+    },
+    {
+      "type": "text",
+      "text": "The other two take a bit more work. I can walk you through them in a 15-minute call, or just send them over. Whichever is easier."
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

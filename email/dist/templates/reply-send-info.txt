@@ -7,7 +7,8 @@ Hi {{first_name}}, here’s the short version.
 3. Bookings and enquiries that reach you on WhatsApp and email, so none get missed
 4. Care after launch: hosting, fixes, and a one-page note each month on what moved
 
-Some of our recent work: {{work_link}}
+- A resort in Indore: Website, online room booking, and event enquiries that go straight to WhatsApp.
+- OffPay: 11,700+ people used it in its first eight weeks; two in three found it on Google.
 
 I can also send the note for {{company}}: three specific changes, in the order we’d make them. Want it?
 
@@ -15,4 +16,3 @@ Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com

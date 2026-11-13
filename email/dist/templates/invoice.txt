@@ -2,7 +2,9 @@ Subject: Invoice {{invoice_no}} from Fieldwise
 
 Invoice {{invoice_no}}
 
-Hi {{first_name}}, here’s the invoice for {{invoice_for}}.
+{{amount}} due by {{due_date}}
+
+For {{invoice_for}}.
 
 Invoice: {{invoice_no}}
 Date: {{invoice_date}}
@@ -26,7 +28,6 @@ Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 --
 Fieldwise · Websites, search and brand. Grow where it counts.

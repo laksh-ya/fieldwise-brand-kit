@@ -1,0 +1,43 @@
+{
+  "id": "enquiry-reply",
+  "group": "client",
+  "kind": "letter",
+  "name": "Reply to an enquiry",
+  "when": "Someone filled in the form on the website. Reply within a working day.",
+  "subject": "Re: your enquiry",
+  "preheader": "Thanks for getting in touch. Here’s the next step.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}},"
+    },
+    {
+      "type": "text",
+      "text": "Thanks for getting in touch about {{topic}}."
+    },
+    {
+      "type": "text",
+      "text": "The best next step is a 20-minute call, so we understand what you need before we suggest anything. Pick a time here: <a href=\"{{call_link}}\">{{call_link}}</a>"
+    },
+    {
+      "type": "text",
+      "text": "Before we talk, it helps to know:"
+    },
+    {
+      "type": "numbered",
+      "items": [
+        "Your current website, if you have one",
+        "What you’d like more of: calls, bookings, enquiries or sales",
+        "When you’d like it done"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "If it’s easier, reply here or message me on WhatsApp."
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

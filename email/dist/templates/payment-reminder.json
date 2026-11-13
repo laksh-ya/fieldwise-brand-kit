@@ -1,0 +1,27 @@
+{
+  "id": "payment-reminder",
+  "group": "billing",
+  "kind": "letter",
+  "name": "Payment reminder",
+  "when": "A few days after the due date. Keep it light.",
+  "subject": "Re: Invoice {{invoice_no}} from Fieldwise",
+  "preheader": "A quick reminder about {{amount}}.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}},"
+    },
+    {
+      "type": "text",
+      "text": "A quick reminder that invoice {{invoice_no}} for {{amount}} was due on {{due_date}}. The payment details are in the original email, and I’ve attached the invoice again."
+    },
+    {
+      "type": "text",
+      "text": "If it’s already on its way, thank you, and please ignore this."
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

@@ -1,35 +1,45 @@
 Subject: The note for {{company}}
 
+The note
+
 Three changes for {{company}}
 
-Hi {{first_name}}, here’s the note I mentioned. I looked at your website, your Google profile and how a new patient books today.
+What we found on your website, your Google profile and how a new patient books today.
+
+Hi {{first_name}}, here’s the note I mentioned. It starts with your site as a new patient sees it:
+
+Your site today
+{{load_time}} seconds to open on a phone
+- {{issue_1}}
+- {{issue_2}}
+- {{issue_3}}
 
 [good] Your reviews are strong
 {{rating}} stars from {{review_count}} patients. That’s the hardest part to build, and you already have it.
 
 [needs work] The site is slow on phones
-It takes {{load_time}} seconds to open on a mid-range phone, mostly because of large photos and a heavy theme. Fix: rebuild the main pages lean, so they open in under two seconds.
+Mostly large photos and a heavy theme. Fix: rebuild the main pages lean, so they open in under two seconds.
 
 [needs work] You’re on page two for “{{search_term}}”
-The clinics above you post photos often and reply to reviews. Fix: complete the Google profile, add photos every month, and reply to every review.
+The clinics above you post photos often and reply to reviews. Fix: complete the Google profile, add photos monthly, reply to every review.
 
 [missing] Booking still starts with a phone call
-If nobody picks up, the patient calls the next clinic. Fix: a short booking form that sends each request to your front desk on WhatsApp and email.
+If nobody picks up, the patient calls the next clinic. Fix: a short booking form that sends each request to your front desk on WhatsApp.
 
 What it would take
-Time: About three weeks for all three
-Your time: Around two hours: one call, one review, one sign-off
-Price: Between {{price_range}}, depending on pages
 
-Book a 15-minute call: {{call_link}}
+1. Week 1: Google profile fixed, and the new home page designed.
+2. Week 2: The rest of the site built, with the booking form.
+3. Week 3: Checked on real phones, then live.
 
-Or reply here with any questions. Happy to go through any of it.
+Want to see it on your own site?
+15 minutes. I’ll share my screen; nothing to prepare. Between {{price_range}}, depending on pages.
+Book a call: {{call_link}}
 
 Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 --
 Fieldwise · Websites, search and brand. Grow where it counts.

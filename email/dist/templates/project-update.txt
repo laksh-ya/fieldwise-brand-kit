@@ -2,9 +2,11 @@ Subject: {{company}}: week {{week}} update
 
 Week {{week}}: {{headline}}
 
-Hi {{first_name}}, here’s where things are.
+[x] Plan  [x] Design  [ ] Build  [ ] Launch
 
-Done
+The new home page. Tap it to open the preview on your phone.
+
+Done this week
 
 - {{done_1}}
 - {{done_2}}
@@ -16,19 +18,14 @@ Next week
 - {{next_2}}
 
 Needed from you
-
 {{needed}}
 
-See the preview: {{preview_link}}
-
-Status: On track
-Launch: {{launch_date}}
+Open the preview: {{preview_link}}
 
 Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 --
 Fieldwise · Websites, search and brand. Grow where it counts.

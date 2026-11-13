@@ -47,6 +47,17 @@ iframe.phone { max-width: 390px; }
 .tags { display: none; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .tags.on { display: flex; }
 .tags code { font: 12.5px ui-monospace, Menlo, monospace; background: var(--soft); padding: 3px 7px; border-radius: 7px; }
+.md { max-width: 760px; width: 100%; background: var(--panel); border-radius: 18px; padding: 28px 34px 40px; line-height: 1.6; font-size: 15.5px; overflow-wrap: anywhere; }
+.md h1 { font-size: 28px; letter-spacing: -.02em; line-height: 1.2; margin: 0 0 14px; }
+.md h2 { font-size: 20px; margin: 34px 0 10px; letter-spacing: -.01em; } .md h3 { font-size: 16px; margin: 22px 0 8px; }
+.md table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 12px 0 18px; display: block; overflow-x: auto; }
+.md td, .md th { border-bottom: 1px solid var(--line); padding: 8px 10px 8px 0; text-align: left; vertical-align: top; }
+.md code { font: 13px ui-monospace, Menlo, monospace; background: var(--soft); padding: 1px 5px; border-radius: 6px; }
+.md pre { background: var(--soft); padding: 14px 16px; border-radius: 12px; overflow-x: auto; } .md pre code { background: none; padding: 0; }
+.md img { max-width: 100%; border-radius: 12px; } .md table img { max-width: 260px; }
+.md a { color: var(--green); } .md hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+body.g .bar .tools, body.g #wh, body.g #tags { display: none; }
+@media (max-width: 860px) { .md { border-radius: 0; padding: 22px 16px 40px; } }
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); opacity: 0; background: var(--ink); color: var(--panel); padding: 10px 16px; border-radius: 999px; font-size: 14px; transition: .25s; pointer-events: none; }
 .toast.on { opacity: 1; transform: translate(-50%, 0); }
 @media (max-width: 860px) {
@@ -66,7 +77,7 @@ iframe.phone { max-width: 390px; }
 </style></head>
 <body>
 <div class="app">
-  <aside><div class="brand"><img src="assets/mark-tint.png" alt=""><span>fieldwise emails</span></div><div class="nav">${list}</div></aside>
+  <aside><a class="brand" href="../" style="color:inherit;text-decoration:none"><img src="assets/mark-tint.png" alt=""><span>fieldwise emails</span></a><button class="it gd" data-id="guide"><b>how to write one</b><i>guide</i></button><div class="nav">${list}</div></aside>
   <main>
     <div class="bar">
       <div class="meta"><div class="sj" id="sj"></div><div class="ph" id="ph"></div><div class="wh" id="wh"></div><div class="tags" id="tags"></div></div>
@@ -74,20 +85,31 @@ iframe.phone { max-width: 390px; }
         <button data-a="wide" class="wd" aria-pressed="true">desktop</button><button data-a="phone" class="wd" aria-pressed="false">phone</button>
         <button data-a="dark" aria-pressed="false">dark</button>
         <button data-a="tags" aria-pressed="false">tags</button>
-        <button data-a="html">copy html</button><button data-a="text">copy text</button><button data-a="rich">copy email</button>
+        <button data-a="json">copy spec</button><button data-a="html">copy html</button><button data-a="text">copy text</button><button data-a="rich">copy email</button>
         <a id="dl" download>download</a>
       </div>
     </div>
-    <div class="stage"><iframe id="fr" title="email preview"></iframe></div>
+    <div class="stage"><iframe id="fr" title="email preview"></iframe><article id="guideDoc" class="md" hidden></article></div>
   </main>
 </div>
 <div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script>
 const INDEX = ${JSON.stringify(index)};
 const $ = (s) => document.querySelector(s), fr = $("#fr");
 let cur = INDEX[0], dark = false;
 function toast(t) { const el = $("#toast"); el.textContent = t; el.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 1600); }
+let guideLoaded = false;
+async function showGuide(push) {
+  document.body.classList.add("g"); fr.hidden = true; const g = $("#guideDoc"); g.hidden = false;
+  document.querySelectorAll(".it").forEach((b) => b.setAttribute("aria-current", b.dataset.id === "guide"));
+  $("#sj").textContent = "how to write a fieldwise email"; $("#ph").textContent = "for people and ai agents";
+  if (!guideLoaded) { const md = await (await fetch("guide.md")).text(); g.innerHTML = marked.parse(md); guideLoaded = true; }
+  if (push) history.replaceState(null, "", "#guide");
+}
 function show(id, push) {
+  if (id === "guide") return showGuide(push);
+  document.body.classList.remove("g"); fr.hidden = false; $("#guideDoc").hidden = true;
   cur = INDEX.find((x) => x.id === id) || INDEX[0];
   document.querySelectorAll(".it").forEach((b) => b.setAttribute("aria-current", b.dataset.id === cur.id));
   $("#sj").textContent = cur.sampleSubject || cur.name;
@@ -109,9 +131,10 @@ document.addEventListener("click", async (e) => {
   if (a === "wide" || a === "phone") { fr.classList.toggle("phone", a === "phone"); document.querySelectorAll(".wd").forEach((x) => x.setAttribute("aria-pressed", x.dataset.a === a)); setTimeout(() => fr.dispatchEvent(new Event("load")), 400); }
   else if (a === "dark") { dark = !dark; b.setAttribute("aria-pressed", dark); fr.style.colorScheme = dark ? "dark" : "light"; }
   else if (a === "tags") { const on = $("#tags").classList.toggle("on"); b.setAttribute("aria-pressed", on); }
-  else if (a === "html" || a === "text") {
-    const r = await fetch("templates/" + cur.id + "." + (a === "html" ? "html" : "txt")); const t = await r.text();
-    try { await navigator.clipboard.writeText(t); toast(a === "html" ? "html copied" : "text copied"); } catch (err) { toast("couldn't copy"); }
+  else if (a === "html" || a === "text" || a === "json") {
+    if (a === "json" && cur.id === "signature") { toast("the signature has no spec"); return; }
+    const r = await fetch("templates/" + cur.id + "." + ({ html: "html", text: "txt", json: "json" })[a]); const t = await r.text();
+    try { await navigator.clipboard.writeText(t); toast(({ html: "html copied", text: "text copied", json: "spec copied, edit it and run draft.js" })[a]); } catch (err) { toast("couldn't copy"); }
   } else if (a === "rich") { // the rendered sample, ready to paste into gmail compose
     try {
       const d = fr.contentDocument, html = d.documentElement.outerHTML;

@@ -1,0 +1,70 @@
+{
+  "id": "launch",
+  "group": "project",
+  "kind": "branded",
+  "name": "Site is live",
+  "when": "Launch day.",
+  "subject": "Your new website is live",
+  "preheader": "{{client_site}} went live this morning.",
+  "footer": "dark",
+  "blocks": [
+    {
+      "type": "hero",
+      "art": "sample-new-phone",
+      "artAlt": "The new {{client_site}} on a phone",
+      "kicker": "Live",
+      "title": "{{client_site}} is live.",
+      "text": "Every booking request now reaches your team on WhatsApp and email.",
+      "button": {
+        "label": "Visit your site",
+        "href": "{{client_url}}"
+      }
+    },
+    {
+      "type": "stats",
+      "items": [
+        [
+          "{{stat_1}}",
+          "{{stat_1_label}}"
+        ],
+        [
+          "{{stat_2}}",
+          "{{stat_2_label}}"
+        ],
+        [
+          "{{stat_3}}",
+          "{{stat_3_label}}"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, congratulations. Here’s what happens from here:"
+    },
+    {
+      "type": "steps",
+      "items": [
+        [
+          "This week",
+          "We watch the first bookings come in and fix anything that feels slow."
+        ],
+        [
+          "In two weeks",
+          "Your Google profile updates with the new hours and photos."
+        ],
+        [
+          "Every month",
+          "A one-page note on what moved and what didn’t."
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Reply to this email with anything you’d like changed."
+    },
+    {
+      "type": "signoff",
+      "text": "Congratulations,"
+    }
+  ]
+}

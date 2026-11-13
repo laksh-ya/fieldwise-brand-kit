@@ -1,6 +1,6 @@
 # Cold outreach playbook
 
-The cold sequence is four short emails, plus "the note" for anyone who says yes. Each one is in `dist/templates/`, and filled-in samples are in `dist/samples/`.
+The cold sequence is four short emails, plus "the note" for anyone who says yes. The specs are in `templates/`, and [GUIDE.md](GUIDE.md) explains how to build each one with `draft.js`. The note includes a phone screenshot of their own site, made with `mockup.js`.
 
 | Step | When | Template | What it does |
 |---|---|---|---|
@@ -64,7 +64,7 @@ Avoid "partnership", "proposal", "growth", exclamation marks and emoji.
 
 ## Sending rules
 
-- **Send cold emails as plain text from a real inbox.** Copy the `.txt` version, not the HTML. Links and images in a first email from a new inbox push it toward spam. Keep the Gmail signature short (name, role, phone).
+- **Warm up a new inbox with plain text.** For the first two weeks from a new address, send the `.txt` versions. After that, send the letter HTML: it's light (a few small images plus the signature) and looks far more considered. Build every email with `draft.js` (see [GUIDE.md](GUIDE.md)).
 - **Volume:** start at 15 a day from a new address and add about 5 a day each week, up to 40. Never paste 100 addresses into one email.
 - **Use a separate sending address on a second domain** once volume goes up, so the main inbox stays clean. Set up SPF, DKIM and DMARC before sending.
 - **Send Tuesday to Thursday, 9:30 to 11:30 am** local time.

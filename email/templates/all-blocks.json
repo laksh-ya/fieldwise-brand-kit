@@ -1,0 +1,254 @@
+{
+  "id": "all-blocks",
+  "group": "basics",
+  "kind": "branded",
+  "name": "Every block",
+  "when": "Reference: every block type in one email. Copy blocks from here.",
+  "subject": "Every Fieldwise email block",
+  "preheader": "Hero, steps, phone, work, stats and the rest, in one place.",
+  "label": "blocks",
+  "blocks": [
+    {
+      "type": "hero",
+      "kicker": "hero",
+      "title": "A hero with the glass mark",
+      "text": "Title, optional kicker, text and button. Add dark: true for the slate version.",
+      "button": {
+        "label": "Button",
+        "href": "https://example.com"
+      }
+    },
+    {
+      "type": "heading",
+      "text": "heading (level 1)"
+    },
+    {
+      "type": "text",
+      "text": "text: a paragraph. <b>Bold</b> and <a href=\"https://example.com\">links</a> are fine."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "heading (level 2)"
+    },
+    {
+      "type": "list",
+      "items": [
+        [
+          "list",
+          "Stone bullets, with or without a bold title."
+        ],
+        [
+          "stone",
+          "green, grey, amber, or mixed (default)."
+        ]
+      ]
+    },
+    {
+      "type": "numbered",
+      "items": [
+        "numbered: a plain 1, 2, 3 list",
+        "Best inside letters"
+      ]
+    },
+    {
+      "type": "steps",
+      "items": [
+        [
+          "steps",
+          "Numbered glass stones joined by a line."
+        ],
+        [
+          "Use for",
+          "Timelines, agendas, what happens next."
+        ]
+      ]
+    },
+    {
+      "type": "features",
+      "items": [
+        [
+          "features",
+          "Two or three columns."
+        ],
+        [
+          "Stack",
+          "They stack on phones."
+        ],
+        [
+          "Keep short",
+          "Five to eight words."
+        ]
+      ]
+    },
+    {
+      "type": "phone",
+      "src": "sample-old-phone",
+      "alt": "A website on a phone",
+      "tone": "bad",
+      "kicker": "phone",
+      "title": "A screenshot beside text",
+      "items": [
+        "tone: bad gives amber stones",
+        "Make one with mockup.js"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "sample-new-desktop",
+      "alt": "A website in a browser",
+      "caption": "image: any asset or https URL, with an optional caption and link."
+    },
+    {
+      "type": "work",
+      "title": "work",
+      "items": [
+        {
+          "src": "work-resort",
+          "title": "A resort in Indore",
+          "text": "Website, online room booking, and event enquiries that go straight to WhatsApp."
+        },
+        {
+          "src": "work-offpay",
+          "title": "OffPay",
+          "text": "11,700+ people used it in its first eight weeks; two in three found it on Google."
+        }
+      ]
+    },
+    {
+      "type": "metrics",
+      "items": [
+        [
+          "metrics",
+          "2,410",
+          "+18% on September"
+        ],
+        [
+          "Four cards",
+          "96",
+          "+12%"
+        ]
+      ]
+    },
+    {
+      "type": "stats",
+      "title": "stats: a dark band of big numbers",
+      "items": [
+        [
+          "1.6 s",
+          "to open"
+        ],
+        [
+          "24/7",
+          "bookings"
+        ],
+        [
+          "0",
+          "missed enquiries"
+        ]
+      ]
+    },
+    {
+      "type": "status",
+      "items": [
+        [
+          "good",
+          "status: good",
+          "What already works."
+        ],
+        [
+          "work",
+          "needs work",
+          "What to fix."
+        ],
+        [
+          "missing",
+          "missing",
+          "What isn’t there yet."
+        ]
+      ]
+    },
+    {
+      "type": "progress",
+      "current": 2,
+      "labels": [
+        "progress",
+        "Design",
+        "Build",
+        "Launch"
+      ]
+    },
+    {
+      "type": "details",
+      "title": "details",
+      "rows": [
+        [
+          "Label",
+          "Value"
+        ],
+        [
+          "Rows",
+          "As many as needed"
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        "table",
+        "Price"
+      ],
+      "rows": [
+        [
+          "Item",
+          "Optional note",
+          "₹10,000"
+        ]
+      ],
+      "foot": [
+        [
+          "Total",
+          "₹10,000"
+        ]
+      ]
+    },
+    {
+      "type": "note",
+      "text": "note: a sand panel for one important thing. tone: green for good news."
+    },
+    {
+      "type": "quote",
+      "text": "quote: only a real quote from a real client, with their permission.",
+      "by": "Name, Business"
+    },
+    {
+      "type": "cta",
+      "title": "cta: the main ask",
+      "text": "A sand panel with the mark and one button.",
+      "button": {
+        "label": "Button",
+        "href": "https://example.com"
+      }
+    },
+    {
+      "type": "banner",
+      "src": "banner-thanks"
+    },
+    {
+      "type": "button",
+      "label": "button",
+      "href": "https://example.com"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "signoff",
+      "text": "signoff (always last, before ps)"
+    },
+    {
+      "type": "ps",
+      "text": "ps: a P.S. line."
+    }
+  ]
+}

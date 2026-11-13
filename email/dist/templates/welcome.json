@@ -1,0 +1,82 @@
+{
+  "id": "welcome",
+  "group": "project",
+  "kind": "branded",
+  "name": "Welcome and kickoff",
+  "when": "The day the project is confirmed.",
+  "subject": "Welcome to Fieldwise, {{first_name}}",
+  "preheader": "How the next {{weeks}} weeks go, and what we need from you.",
+  "footer": "dark",
+  "blocks": [
+    {
+      "type": "hero",
+      "dark": true,
+      "kicker": "Welcome",
+      "title": "Welcome aboard, {{first_name}}.",
+      "text": "We’re glad to be working on {{company}}. Here’s how the next {{weeks}} weeks go."
+    },
+    {
+      "type": "steps",
+      "items": [
+        [
+          "Week 1",
+          "We collect what we need and design the home page."
+        ],
+        [
+          "Week 2",
+          "You review the design. We build the rest of the site."
+        ],
+        [
+          "Week 3",
+          "Final checks on real phones, then we go live."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What we need from you"
+    },
+    {
+      "type": "list",
+      "stone": "mixed",
+      "items": [
+        "Your logo, in any format you have",
+        "10 to 20 photos of the place, the people and the work",
+        "Logins for your domain and current website, or the name of whoever manages them",
+        "Access to your Google Business Profile",
+        "Links to any websites you like the look of"
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Send your files",
+      "text": "One folder is fine. We’ll sort them.",
+      "button": {
+        "label": "Upload files",
+        "href": "{{upload_link}}"
+      }
+    },
+    {
+      "type": "details",
+      "rows": [
+        [
+          "Your contact",
+          "{{sender_name}}"
+        ],
+        [
+          "Replies",
+          "Within one working day"
+        ],
+        [
+          "Weekly update",
+          "Every Friday"
+        ]
+      ]
+    },
+    {
+      "type": "signoff",
+      "text": "Talk soon,"
+    }
+  ]
+}

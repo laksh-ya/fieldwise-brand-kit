@@ -1,0 +1,47 @@
+{
+  "id": "reply-send-info",
+  "group": "replies",
+  "kind": "letter",
+  "name": "“Send me details”",
+  "when": "They asked for more information first.",
+  "subject": "Re: {{company}} on Google",
+  "preheader": "What we do, and two recent projects.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, here’s the short version."
+    },
+    {
+      "type": "numbered",
+      "items": [
+        "<b>Websites</b> that open in under two seconds on a phone and are easy for your team to update",
+        "<b>Google and Maps</b>: a complete profile, photos, reviews and the searches you should show up for",
+        "<b>Bookings and enquiries</b> that reach you on WhatsApp and email, so none get missed",
+        "<b>Care</b> after launch: hosting, fixes, and a one-page note each month on what moved"
+      ]
+    },
+    {
+      "type": "work",
+      "items": [
+        {
+          "src": "work-resort",
+          "title": "A resort in Indore",
+          "text": "Website, online room booking, and event enquiries that go straight to WhatsApp."
+        },
+        {
+          "src": "work-offpay",
+          "title": "OffPay",
+          "text": "11,700+ people used it in its first eight weeks; two in three found it on Google."
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "I can also send the note for {{company}}: three specific changes, in the order we’d make them. Want it?"
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

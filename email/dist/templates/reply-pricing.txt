@@ -1,8 +1,10 @@
 Subject: Re: {{company}} on Google
 
-Hi {{first_name}}, fair question.
+Hi {{first_name}}, fair question. Here’s what projects like this usually come to:
 
-Most projects like this come to between {{price_range}} for the website, with the Google profile work included. After launch, hosting and care is {{care_price}} a month, and you can stop that any time.
+Website: Between {{price_range}}, depending on pages
+Google profile: Included
+Hosting and care: {{care_price}} a month after launch, stop any time
 
 I can give you an exact number after a 15-minute call, once I know which pages you need. Does {{slot_1}} work?
 
@@ -10,4 +12,3 @@ Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com

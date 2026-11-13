@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><style>body{margin:0;background:#ECE8E0;font:13px system-ui;display:grid;grid-template-columns:repeat(8,1fr)}
+.c{padding:10px;border:1px solid #0001;display:flex;flex-direction:column;align-items:center}.c svg{width:200px;height:auto}</style>
+<script src="pebbles.js"></script></head><body><script>
+const q=new URLSearchParams(location.search);
+fetch(q.get('f')||'gen-out.json').then(r=>r.json()).then(L=>{for(const o of L){const d=document.createElement('div');d.className='c';
+d.innerHTML='<b>'+o.id+'</b>'+Pebbles.render(o.stones.map(s=>({poly:s.poly,color:Pebbles.PAL[s.color]||s.color})),{size:200,material:q.get('m')||'glass'});document.body.appendChild(d)}});
+</script></body></html>

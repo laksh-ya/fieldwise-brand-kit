@@ -4,7 +4,7 @@ Hi {{first_name}},
 
 Thanks for getting in touch about {{topic}}.
 
-The best next step is a 20-minute call, so we can understand what you need before we suggest anything. You can pick a time here: {{call_link}}
+The best next step is a 20-minute call, so we understand what you need before we suggest anything. Pick a time here: {{call_link}}
 
 Before we talk, it helps to know:
 
@@ -12,10 +12,9 @@ Before we talk, it helps to know:
 2. What you’d like more of: calls, bookings, enquiries or sales
 3. When you’d like it done
 
-If it’s easier, reply here or message me on WhatsApp at +91 92014 79878.
+If it’s easier, reply here or message me on WhatsApp.
 
 Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com

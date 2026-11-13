@@ -1,0 +1,53 @@
+{
+  "id": "payment-received",
+  "group": "billing",
+  "kind": "branded",
+  "name": "Payment received",
+  "when": "The day a payment arrives.",
+  "subject": "Payment received, thank you",
+  "preheader": "{{amount}} for invoice {{invoice_no}}.",
+  "label": "receipt",
+  "blocks": [
+    {
+      "type": "hero",
+      "kicker": "Receipt",
+      "title": "Thank you. We’ve received {{amount}}.",
+      "text": "Keep this email for your records; the PDF receipt is attached."
+    },
+    {
+      "type": "details",
+      "rows": [
+        [
+          "Invoice",
+          "{{invoice_no}}"
+        ],
+        [
+          "Amount",
+          "{{amount}}"
+        ],
+        [
+          "Paid on",
+          "{{paid_on}}"
+        ],
+        [
+          "Method",
+          "{{pay_method}}"
+        ],
+        [
+          "Reference",
+          "{{pay_ref}}"
+        ]
+      ]
+    },
+    {
+      "type": "note",
+      "tone": "green",
+      "title": "Balance",
+      "text": "{{balance}}"
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

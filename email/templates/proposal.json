@@ -1,0 +1,112 @@
+{
+  "id": "proposal",
+  "group": "client",
+  "kind": "branded",
+  "name": "Proposal",
+  "when": "Within two days of the call. The short version, with the full proposal linked.",
+  "subject": "Your proposal from Fieldwise",
+  "preheader": "Scope, price and timeline for {{company}}.",
+  "label": "proposal",
+  "blocks": [
+    {
+      "type": "hero",
+      "kicker": "Proposal",
+      "title": "Here’s the plan for {{company}}.",
+      "text": "Three pieces of work, live in {{timeline}}."
+    },
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, thanks for the call on {{call_day}}. This is the short version; the full proposal is linked below."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What we’ll do"
+    },
+    {
+      "type": "table",
+      "head": [
+        "Work",
+        "Price"
+      ],
+      "rows": [
+        [
+          "{{item_1}}",
+          "{{item_1_note}}",
+          "{{item_1_price}}"
+        ],
+        [
+          "{{item_2}}",
+          "{{item_2_note}}",
+          "{{item_2_price}}"
+        ],
+        [
+          "{{item_3}}",
+          "{{item_3_note}}",
+          "{{item_3_price}}"
+        ]
+      ],
+      "foot": [
+        [
+          "Hosting and care, after launch",
+          "{{care_price}} a month"
+        ],
+        [
+          "Total to build",
+          "{{total}}"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How it goes"
+    },
+    {
+      "type": "steps",
+      "items": [
+        [
+          "Week 1",
+          "We collect your photos and logins, and design the home page."
+        ],
+        [
+          "Week 2",
+          "You review the design. We build the rest, with the booking form."
+        ],
+        [
+          "Week 3",
+          "Checked on real phones, then live. Half the payment is due at launch."
+        ]
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Read the full proposal",
+      "text": "Valid until {{valid_until}}. Reply with any changes and I’ll update it the same day.",
+      "button": {
+        "label": "Open the proposal",
+        "href": "{{proposal_link}}"
+      }
+    },
+    {
+      "type": "work",
+      "title": "Recent work",
+      "items": [
+        {
+          "src": "work-resort",
+          "title": "A resort in Indore",
+          "text": "Website, online room booking, and event enquiries that go straight to WhatsApp."
+        },
+        {
+          "src": "work-bus",
+          "title": "Bus ticketing",
+          "text": "Seat selection, QR tickets and live tracking, with every rupee accounted for."
+        }
+      ]
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

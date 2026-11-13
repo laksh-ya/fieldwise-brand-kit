@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fieldwise Logo Lab</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,400..700&family=Inter+Tight:wght@500;600&family=Instrument+Serif&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --page: #F3F0EA; --sand: #ECE7DE; --sand-2: #E4DED3; --card: #FBFAF7;
+  --ink: #18241F; --ink-2: #5E6661; --ink-3: #8F948F; --line: rgba(40,35,25,.12);
+  --bottle: #2C8A64; --citrine: #F1BB52; --night: #10201A;
+  --font: "Google Sans Flex", "Inter Tight", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --page: #0F1714; --card: #16201C; --ink: #E9EEE9; --ink-2: #A8B2AC; --ink-3: #7C857F; --line: rgba(230,240,232,.12); color-scheme: dark; }
+}
+:root[data-theme="dark"] { --page: #0F1714; --card: #16201C; --ink: #E9EEE9; --ink-2: #A8B2AC; --ink-3: #7C857F; --line: rgba(230,240,232,.12); color-scheme: dark; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 15px/1.5 var(--font); font-optical-sizing: auto; }
+.wrap { max-width: 1320px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 11; background: var(--page); }
+header.top { padding-top: 56px; padding-bottom: 24px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+h1 { font-size: clamp(34px, 6vw, 60px); line-height: 1.02; letter-spacing: -.03em; font-weight: 500; margin: 10px 0 18px; }
+h2 { font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -.02em; font-weight: 500; margin: 0 0 8px; }
+h3 { font-size: 17px; font-weight: 500; margin: 0; letter-spacing: -.01em; }
+.lead { font-size: 17px; color: var(--ink-2); max-width: 760px; margin: 0; }
+.brief { display: grid; gap: 14px; margin-top: 28px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.brief div { border-top: 1px solid var(--line); padding-top: 12px; color: var(--ink-2); font-size: 14px; }
+.brief b { display: block; color: var(--ink); font-weight: 500; font-size: 15px; margin-bottom: 2px; }
+
+.bar { position: var(--barpos, sticky); top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--page) 88%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-top: 10px; padding-bottom: 10px; }
+.seg { display: inline-flex; background: color-mix(in srgb, var(--ink) 6%, transparent); border-radius: 999px; padding: 3px; overflow-x: auto; max-width: 100%; }
+.seg button { font: 500 13px var(--font); color: var(--ink-2); border: 0; background: none; padding: 7px 13px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 0 0 1px var(--line); }
+.bar label { font-size: 12px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .06em; margin-right: -8px; }
+
+section { padding: 56px 0 8px; }
+.sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: end; margin-bottom: 22px; }
+.sec-head p { margin: 0; color: var(--ink-2); max-width: 640px; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.card { background: var(--card); border-radius: 22px; overflow: hidden; border: 1px solid var(--line); display: flex; flex-direction: column; }
+.stage { background: var(--sand); aspect-ratio: 1 / 0.86; display: grid; place-items: center; position: relative; }
+.stage.dark { background: var(--night); }
+.stage.white { background: #fff; }
+.stage svg { width: 62%; height: auto; max-height: 78%; }
+.stage img { width: 74%; height: 84%; object-fit: contain; display: block; }
+.chip img { width: 82%; height: 82%; object-fit: contain; }
+.card .meta { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card .meta p { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.45; }
+.num { font: 600 11px "JetBrains Mono", monospace; color: var(--ink-3); }
+.strip { display: flex; gap: 6px; align-items: center; padding: 0 16px 14px; flex-wrap: wrap; }
+.chip { width: 44px; height: 38px; border-radius: 10px; display: grid; place-items: center; background: var(--sand); }
+.chip.k { background: var(--night); }
+.chip.w { background: #fff; border: 1px solid var(--line); }
+.chip svg { width: 70%; height: 70%; }
+.fav { display: flex; gap: 6px; align-items: end; margin-left: auto; }
+.fav span { background: #fff; border: 1px solid var(--line); border-radius: 5px; display: grid; place-items: center; }
+.use { margin-top: auto; align-self: flex-start; font: 500 12.5px var(--font); color: var(--ink); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.use[aria-pressed="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+
+.motion { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .motion { grid-template-columns: 2fr 1fr; } }
+.motion .stage { aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; }
+.motion .stage svg { position: absolute; inset: 0; margin: auto; width: auto; height: 64%; }
+.motion aside { display: flex; flex-direction: column; gap: 12px; color: var(--ink-2); font-size: 14px; }
+.btn { font: 500 14px var(--font); border: 0; background: var(--ink); color: var(--page); border-radius: 999px; padding: 10px 18px; cursor: pointer; align-self: flex-start; }
+select { font: 500 14px var(--font); padding: 9px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); max-width: 100%; }
+
+.lockups { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
+.lock { border-radius: 22px; padding: 28px; min-height: 220px; display: grid; place-items: center; position: relative; border: 1px solid var(--line); overflow: hidden; }
+.lock .cap { position: absolute; left: 16px; bottom: 12px; font-size: 12px; color: var(--ink-3); }
+.lock.dark .cap, .lock.green .cap { color: rgba(255,255,255,.5); }
+.lu { display: flex; align-items: center; gap: .34em; font-size: clamp(34px, 5vw, 56px); }
+.lu.stack { flex-direction: column; gap: .22em; }
+.lu .mk svg { height: 1.5em; width: auto; display: block; }
+.lu.stack .mk svg { height: 1.9em; }
+.wm { font-family: var(--font); font-weight: 500; letter-spacing: -.025em; line-height: 1; color: #18241F; font-variation-settings: "opsz" 72; }
+.wm.inter { font-family: "Inter Tight"; font-weight: 600; letter-spacing: -.03em; }
+.wm.serif { font-family: "Instrument Serif"; font-weight: 400; letter-spacing: -.01em; font-size: 1.12em; }
+
+/* print mockups */
+.print { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); }
+.desk { background: #DCD6CB; border-radius: 22px; padding: 28px 20px; display: grid; place-items: center; min-height: 340px; position: relative; overflow: hidden; }
+.desk .cap { position: absolute; left: 16px; bottom: 12px; font-size: 12px; color: #6F6A60; }
+.paper { background: #FBFAF6; box-shadow: 0 1px 1px rgba(0,0,0,.06), 0 10px 30px -10px rgba(40,30,10,.35); color: #18241F; position: relative; }
+.bc { width: min(100%, 340px); aspect-ratio: 85 / 55; border-radius: 6px; padding: 7% 8%; display: flex; flex-direction: column; justify-content: space-between; }
+.bc.back { background: #E9E4D9; display: grid; place-items: center; }
+.bc .lu { font-size: 22px; }
+.bc small { font-size: 10px; color: #5E6661; line-height: 1.5; }
+.bcs { display: grid; gap: 14px; justify-items: center; }
+.a5 { width: min(78%, 250px); aspect-ratio: 148 / 210; padding: 9% 9% 8%; display: flex; flex-direction: column; justify-content: space-between; background: #EFEAE1; overflow: hidden; }
+.a5 .big svg { width: 100%; height: auto; }
+.a5 h4 { margin: 0; font-weight: 500; font-size: 17px; letter-spacing: -.02em; line-height: 1.15; }
+.a5 small { font-size: 8.5px; color: #5E6661; }
+.rcpt { width: 210px; padding: 18px 16px 30px; font: 400 10.5px/1.5 "JetBrains Mono", monospace; color: #111; background: #FDFDFB; clip-path: polygon(0 0,100% 0,100% calc(100% - 8px),95% 100%,90% calc(100% - 8px),85% 100%,80% calc(100% - 8px),75% 100%,70% calc(100% - 8px),65% 100%,60% calc(100% - 8px),55% 100%,50% calc(100% - 8px),45% 100%,40% calc(100% - 8px),35% 100%,30% calc(100% - 8px),25% 100%,20% calc(100% - 8px),15% 100%,10% calc(100% - 8px),5% 100%,0 calc(100% - 8px)); }
+.rcpt .hd { display: grid; justify-items: center; gap: 6px; margin-bottom: 10px; }
+.rcpt .hd svg { width: 46px; height: auto; }
+.rcpt .hd b { font: 600 14px var(--font); letter-spacing: -.01em; }
+.rcpt .r { display: flex; justify-content: space-between; }
+.rcpt hr { border: 0; border-top: 1px dashed #999; margin: 8px 0; }
+.lh { width: min(100%, 300px); aspect-ratio: 210 / 297; padding: 8%; font-size: 7px; color: #5E6661; display: flex; flex-direction: column; gap: 8px; }
+.lh .top { display: flex; justify-content: space-between; align-items: start; border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+.lh .lu { font-size: 16px; }
+.lh .ln { height: 3px; background: #ECEAE4; border-radius: 2px; }
+.stamp { width: 180px; height: 180px; border-radius: 50%; border: 3px solid #2C3E8C; color: #2C3E8C; display: grid; place-items: center; text-align: center; transform: rotate(-8deg); mix-blend-mode: multiply; opacity: .85; }
+.stamp svg { width: 64px; height: auto; }
+.stamp b { display: block; font: 600 15px var(--font); letter-spacing: .14em; text-transform: uppercase; }
+.desk.two { gap: 20px; grid-template-columns: 1fr 1fr; align-items: center; justify-items: center; }
+.emboss { width: min(240px, 100%); aspect-ratio: 1.4; background: #EEEBE5; border-radius: 4px; display: grid; place-items: center; }
+.emboss svg { width: 90px; height: auto; filter: drop-shadow(-1px -1px 0 rgba(255,255,255,.95)) drop-shadow(1.5px 1.5px 1px rgba(80,60,30,.28)); }
+
+.specs { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); margin-top: 20px; }
+.spec { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px; font-size: 14px; color: var(--ink-2); }
+.spec h3 { color: var(--ink); margin-bottom: 8px; }
+.spec ul { margin: 0; padding-left: 18px; }
+.spec li { margin: 4px 0; }
+.sw { display: grid; grid-template-columns: 34px 1fr auto; gap: 4px 10px; align-items: center; font-size: 12.5px; }
+.sw i { width: 34px; height: 26px; border-radius: 9px; display: block; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+.sw code { font: 400 11.5px "JetBrains Mono", monospace; color: var(--ink-3); }
+footer { padding-top: 64px; padding-bottom: 80px; color: var(--ink-3); font-size: 13px; }
+/* phones */
+@media (max-width: 720px) {
+  .bar .wrap { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; gap: 8px; }
+  .bar .wrap::-webkit-scrollbar { display: none; }
+  .bar .wrap { -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent); padding-right: 48px; }
+  .bar label { display: none; }
+  .seg { flex: none; overflow: visible; }
+  .seg button { padding: 8px 12px; }
+  header.top { padding-top: 32px; }
+  section { padding-top: 44px; }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .card { border-radius: 16px; }
+  .strip { padding: 0 10px 10px; gap: 4px; }
+  .chip { width: 30px; height: 28px; border-radius: 7px; }
+  .fav { display: none; }
+  .card .meta { padding: 8px 12px 12px; gap: 8px; }
+  .card h3 { font-size: 14px; }
+  .use { font-size: 12px; padding: 6px 11px; }
+  .lock { padding: 22px 16px 34px; min-height: 170px; }
+  .lu { font-size: 32px; }
+  .desk { padding: 24px 16px 40px; min-height: 0; }
+  .desk.two { grid-template-columns: 1fr; }
+  .stamp { width: 150px; height: 150px; }
+  .motion .stage { aspect-ratio: 4 / 3; }
+  .sec-head select { width: 100%; }
+}
+@media print {
+  .bar, .use, #replay, #msel, .sec-head select { display: none !important; }
+  .card, .lock, .desk, .spec, .motion { break-inside: avoid; }
+  section { break-before: auto; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="top wrap">
+  <div class="eyebrow">Fieldwise · logo lab · round 2</div>
+  <h1>Sea glass,<br>set into a right angle.</h1>
+  <p class="lead">Sea glass starts as broken glass. The sea turns the pieces over until every edge is soft, and someone picks them up one by one and sets them down in order. No two stones here are the same shape. Each mark is a handful of them, settled into a right angle.</p>
+  <div class="brief">
+    <div><b>Why a right triangle</b>Square and level, like a set square. It's also the corner of a field, which is the "field" in Fieldwise.</div>
+    <div><b>Why loose stones</b>The work is many different things (site, search, tools, workflows), each with its own shape, arranged until they make one clear form.</div>
+    <div><b>The warm stone</b>One citrine piece in almost every mark: the old favicon's amber dot, now the stone that's lit.</div>
+    <div><b>Built to print</b>Every mark also comes as flat, two-tone, one-colour and line versions, so it works on receipts and stamps as well as screens.</div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <label>Material</label>
+    <div class="seg" id="mat">
+      <button data-v="glass" aria-pressed="true">Glass</button><button data-v="glow">Glass, dark</button><button data-v="tint">Two-tone</button><button data-v="flat">Flat</button><button data-v="mono">One colour</button><button data-v="outline">Line</button>
+    </div>
+    <label>Glass</label>
+    <div class="seg" id="pal">
+      <button data-v="field" aria-pressed="true">Shore</button><button data-v="shore">Deep sea</button><button data-v="greens">Field</button><button data-v="milk">Milk + one lit</button><button data-v="deep">Bottle</button>
+    </div>
+    <label>Angle</label>
+    <div class="seg" id="ori"><button data-v="l" aria-pressed="true">◣</button><button data-v="r">◢</button></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="concepts">
+    <div class="sec-head">
+      <div><h2>Nineteen arrangements</h2><p>Every stone is generated as a broken shard tumbled smooth, then the stones are set into the corner largest first. The biggest pieces sit in the right angle and the small ones work out toward the tips. Each card also shows the other materials and the mark at 32 and 16 pixels. Press "Use this" to send one to the motion, lockups and print sections below.</p></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="motion">
+    <div class="sec-head"><div><h2>Rearranging</h2><p>On the site, the pieces start scattered and settle into the triangle, as if placed by hand. It plays once, then rests.</p></div></div>
+    <div class="motion">
+      <div class="stage" id="mstage"></div>
+      <aside>
+        <select id="msel" aria-label="Concept to animate"></select>
+        <button class="btn" id="replay">Play again</button>
+        <p>Pieces travel on one gentle spring and land in order from the right angle outward. With reduced motion turned on, it simply appears.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="lockups">
+    <div class="sec-head"><div><h2>With the name</h2><p>The wordmark is set in Google Sans Flex: plain, dark and quiet, so the glass does the talking. Inter Tight (the current site font) and a serif are there to compare.</p></div>
+      <select id="lsel" aria-label="Concept for lockups and print"></select></div>
+    <div class="lockups" id="locks"></div>
+  </section>
+
+  <section id="print">
+    <div class="sec-head"><div><h2>In print</h2><p>Print uses the flat, two-tone and one-colour versions. Glass is for screens and large covers. A receipt printer only has black, so the mark has to hold up as a solid shape.</p></div></div>
+    <div class="print" id="prints"></div>
+    <div class="specs">
+      <div class="spec"><h3>Colours</h3><div class="sw" id="swatches"></div><p style="margin:10px 0 0;font-size:12px">CMYK values are starting points. Run a proof with your printer before a big order.</p></div>
+      <div class="spec"><h3>Getting the glass feel on paper</h3><ul>
+        <li>Print the two-tone mark on uncoated or soft-touch matte stock.</li>
+        <li>Put a <b>spot UV</b> or <b>frosted varnish</b> layer on the stones only. They catch the light and feel like glass under your thumb.</li>
+        <li>For a premium card, do the citrine stone in warm gold foil and keep the rest flat.</li>
+        <li>Blind-emboss the line version on the back of the card or the cover of a folder.</li>
+      </ul></div>
+      <div class="spec"><h3>Smallest sizes</h3><ul>
+        <li>Loose and Settled (4–6 stones): 10 mm wide, or 24 px on screen.</li>
+        <li>Close-set and Nine stones: 14 mm, or 32 px.</li>
+        <li>Dense and Ring: 18 mm, or 40 px. Below that, switch to a Loose arrangement as the small version of the same mark.</li>
+        <li>Thermal receipts: the one-colour mark at 15–20 mm wide, never the line version.</li>
+      </ul></div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">Everything here is drawn in code as vectors, so any mark can be exported at any size as SVG, PDF or PNG once you've picked one.</footer>
+
+<script src="pebbles.js"></script>
+<script src="layouts.js"></script>
+<script>
+(() => {
+  const { render, PAL, mix } = Pebbles;
+  const CONCEPTS = LAYOUTS.map((l) => ({ key: l.key, name: "No. " + String(l.n).padStart(2, "0") + " · " + l.kind, build: () => l.stones.map((s) => ({ poly: s.poly, color: PAL[s.color] || s.color })) }));
+  const mirror = (items) => items.map((it) => ({ ...it, poly: it.poly.map(([x, y]) => [1000 - x, y]).reverse() }));
+  const state = { mat: "glass", pal: "field", ori: "l", pick: CONCEPTS[0].key };
+  try { Object.assign(state, JSON.parse(localStorage.getItem("fw-lab2") || "{}")); } catch (e) {}
+  if (!CONCEPTS.some((c) => c.key === state.pick)) state.pick = CONCEPTS[0].key;
+  const save = () => { try { localStorage.setItem("fw-lab2", JSON.stringify(state)); } catch (e) {} };
+
+  // Palettes remap the authored colours: cool glass cycles through a ramp, warm stays warm.
+  const WARM = new Set([PAL.citrine, PAL.amber, PAL.copper]);
+  const PALS = {
+    field: null,
+    shore: { cool: [PAL.cobalt, "#2B8C93", PAL.aqua, "#3552A8", PAL.teal, PAL.sky], warm: PAL.citrine },
+    greens: { cool: [PAL.bottle, PAL.seafoam, PAL.moss, PAL.lime, PAL.teal, "#A9D9B9", "#4E9C6E"], warm: PAL.citrine },
+    milk: { cool: ["#D8E1D9", "#CBD6D0", "#E3E8E1", "#D2DCDA"], warm: PAL.citrine },
+    deep: { cool: ["#2C8A64", "#5FB48A", "#1F6E52", "#86D3AE", "#3F9E78"], warm: PAL.citrine },
+  };
+  function build(c) {
+    let items = c.build();
+    const P = PALS[state.pal];
+    if (P) {
+      const seen = new Map();
+      items = items.map((it) => {
+        if (WARM.has(it.color)) return { ...it, color: P.warm };
+        if (!seen.has(it.color)) seen.set(it.color, P.cool[seen.size % P.cool.length]);
+        return { ...it, color: seen.get(it.color) };
+      });
+    }
+    return state.ori === "r" ? mirror(items) : items;
+  }
+  // An SVG drawn as an <img>: the browser rasterises it once, so scrolling stays smooth on phones.
+  const img = (items, o, alt) => {
+    const svg = render(items, { ...o, room: o.material === "glass" || o.material === "glow" });
+    return `<img alt="${alt}" decoding="async" src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}">`;
+  };
+  const bgFor = (m) => (m === "glow" ? "dark" : m === "glass" ? "" : "white");
+
+  function drawGrid() {
+    const g = document.getElementById("grid"); g.innerHTML = "";
+    CONCEPTS.forEach((c, n) => {
+      const items = build(c);
+      const card = document.createElement("article"); card.className = "card";
+      const others = ["glass", "glow", "tint", "mono", "outline"].filter((m) => m !== state.mat);
+      card.innerHTML = `
+        <div class="stage ${bgFor(state.mat)}">${img(items, { size: 420, material: state.mat }, c.name)}</div>
+        <div class="strip">${others.map((m) => `<span class="chip ${m === "glow" ? "k" : m === "glass" ? "" : "w"}" title="${m}">${img(items, { size: 60, material: m }, c.name + ", " + m)}</span>`).join("")}
+          <span class="fav"><span style="width:38px;height:38px">${render(items, { size: 32, material: "flat", pad: 0.04 })}</span><span style="width:22px;height:22px">${render(items, { size: 16, material: "flat", pad: 0.02 })}</span></span></div>
+        <div class="meta"><h3>${c.name}</h3>
+        <button class="use" data-k="${c.key}" aria-pressed="${state.pick === c.key}">${state.pick === c.key ? "In use below" : "Use this"}</button></div>`;
+      g.appendChild(card);
+    });
+  }
+
+  // ---------- motion ----------
+  let timer;
+  function playMotion() {
+    const c = CONCEPTS.find((x) => x.key === document.getElementById("msel").value);
+    const items = build(c);
+    const st = document.getElementById("mstage");
+    const dark = state.mat === "glow";
+    st.className = "stage" + (dark ? " dark" : "");
+    st.innerHTML = render(items, { size: 700, material: dark ? "glow" : state.mat === "glass" ? "glass" : state.mat, animatable: true });
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const svg = st.querySelector("svg");
+    const R = Pebbles.rng(Date.now() & 0xffff);
+    const corner = state.ori === "r" ? [1000, 1000] : [0, 1000];
+    const order = items.map((it, i) => ({ i, d: Math.hypot(...Pebbles.sub(Pebbles.centroid(it.poly), corner)) })).sort((a, b) => a.d - b.d);
+    order.forEach(({ i }, rank) => {
+      const c0 = Pebbles.centroid(items[i].poly);
+      const ang = R() * Math.PI * 2, dist = 380 + R() * 420;
+      const dx = Math.cos(ang) * dist, dy = Math.sin(ang) * dist * 0.6, rot = (R() - 0.5) * 120;
+      svg.querySelectorAll(`[data-i="${i}"]`).forEach((el) => {
+        el.style.transformOrigin = `${c0[0]}px ${c0[1]}px`;
+        el.animate([
+          { transform: `translate(${dx}px, ${dy}px) rotate(${rot}deg)`, opacity: 0 },
+          { opacity: 1, offset: 0.25 },
+          { transform: "translate(0,0) rotate(0deg)", opacity: 1 },
+        ], { duration: 1500, delay: 250 + rank * (900 / items.length), easing: "cubic-bezier(.22,1.18,.36,1)", fill: "backwards" });
+      });
+    });
+  }
+
+  // ---------- lockups ----------
+  const mark = (items, m, extra = {}) => render(items, { size: 300, material: m, pad: 0.02, ...extra });
+  function drawLocks() {
+    const c = CONCEPTS.find((x) => x.key === state.pick);
+    const items = build(c);
+    const L = document.getElementById("locks");
+    const lu = (m, cls = "", wm = "", style = "", extra) => `<div class="lu ${cls}"><span class="mk">${mark(items, m, extra)}</span><span class="wm ${wm}" style="${style}">Fieldwise</span></div>`;
+    L.innerHTML = `
+      <div class="lock" style="background:#ECE7DE">${lu("glass")}<span class="cap">Glass on sand, for the site header and hero</span></div>
+      <div class="lock" style="background:#fff">${lu("tint")}<span class="cap">Two-tone, for print and documents</span></div>
+      <div class="lock" style="background:#F3F0EA">${lu("glass", "stack")}<span class="cap">Stacked</span></div>
+      <div class="lock dark" style="background:#10201A">${lu("glow", "", "", "color:#EEF2EE")}<span class="cap">Glass on dark</span></div>
+      <div class="lock" style="background:#fff">${lu("mono")}<span class="cap">One colour</span></div>
+      <div class="lock green" style="background:#2C8A64">${lu("mono", "", "", "color:#fff", { ink: "#fff" })}<span class="cap">Reversed out of brand green</span></div>
+      <div class="lock" style="background:#fff">${lu("flat", "", "inter")}<span class="cap">Compare: Inter Tight (current site font)</span></div>
+      <div class="lock" style="background:#F6F2EA">${lu("flat", "", "serif")}<span class="cap">Compare: a serif wordmark</span></div>
+      <div class="lock" style="background:#E4DED3">
+        <div style="display:flex;gap:22px;align-items:end;flex-wrap:wrap;justify-content:center">
+          <div style="width:120px;height:120px;border-radius:28px;background:linear-gradient(160deg,#F4F0E8,#E2DBCF);display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(60,40,10,.4),inset 0 1px 0 #fff">${render(items, { size: 72, material: "glass", pad: 0.02 })}</div>
+          <div style="width:120px;height:120px;border-radius:28px;background:radial-gradient(120% 120% at 30% 20%,#1B3A2E,#0C1A15);display:grid;place-items:center;box-shadow:0 10px 24px -10px rgba(0,0,0,.5)">${render(items, { size: 72, material: "glow", pad: 0.02 })}</div>
+          <div style="width:64px;height:64px;border-radius:15px;background:#fff;display:grid;place-items:center">${render(items, { size: 40, material: "flat", pad: 0.02 })}</div>
+        </div><span class="cap">App icons and avatar</span></div>`;
+    drawPrint(items);
+  }
+
+  // ---------- print ----------
+  function drawPrint(items) {
+    const P = document.getElementById("prints");
+    const m = (mat, size, extra = {}) => render(items, { size, material: mat, pad: 0.02, ...extra });
+    P.innerHTML = `
+      <div class="desk"><div class="bcs">
+        <div class="paper bc"><div class="lu"><span class="mk">${m("tint", 60)}</span><span class="wm">Fieldwise</span></div>
+          <small><b style="color:#18241F;font-weight:500">Websites, apps and workflows</b><br>fieldwisesolutions1@gmail.com<br>+91 92014 79878</small></div>
+        <div class="paper bc back">${m("tint", 110)}</div>
+      </div><span class="cap">Business card · two-tone + spot UV on the stones</span></div>
+      <div class="desk"><div class="paper a5">
+        <div class="lu" style="font-size:15px"><span class="mk">${m("mono", 30)}</span><span class="wm">Fieldwise</span></div>
+        <div class="big">${render(items, { size: 260, material: "glass", pad: 0.06 })}</div>
+        <div><h4>Your business, put in order online.</h4><small>Websites · Search · Apps · Workflows</small></div>
+      </div><span class="cap">Brochure cover, A5 · glass printed at 300 dpi</span></div>
+      <div class="desk"><div class="paper rcpt">
+        <div class="hd">${m("mono", 46, { ink: "#111" })}<b>Fieldwise</b><span>Invoice #FW-0142</span></div>
+        <div class="r"><span>Website, 5 pages</span><span>24,999</span></div>
+        <div class="r"><span>Booking setup</span><span>6,000</span></div>
+        <div class="r"><span>Hosting, 1 yr</span><span>3,500</span></div><hr>
+        <div class="r"><b>Total</b><b>₹34,499</b></div><hr>
+        <div style="text-align:center">Thank you</div>
+      </div><span class="cap">Thermal receipt · one colour, black only</span></div>
+      <div class="desk"><div class="paper lh">
+        <div class="top"><div class="lu"><span class="mk">${m("tint", 34)}</span><span class="wm">Fieldwise</span></div><div style="text-align:right">fieldwisesolutions1@gmail.com<br>+91 92014 79878</div></div>
+        ${Array.from({ length: 14 }, (_, i) => `<div class="ln" style="width:${[90, 96, 88, 70, 0, 94, 92, 97, 60, 0, 91, 85, 40, 0][i]}%;${[4, 9, 13].includes(i) ? "background:none" : ""}"></div>`).join("")}
+      </div><span class="cap">Letterhead and invoices</span></div>
+      <div class="desk two">
+        <div class="stamp"><div>${m("mono", 64, { ink: "#2C3E8C" })}<b>Fieldwise</b></div></div>
+        <div class="emboss">${m("mono", 90, { ink: "#EEEBE5" })}</div>
+        <span class="cap">Rubber stamp and blind emboss</span></div>`;
+    const cols = [["Bottle", PAL.bottle], ["Seafoam", PAL.seafoam], ["Aqua", PAL.aqua], ["Cobalt", PAL.cobalt], ["Citrine", PAL.citrine], ["Ink", Pebbles.INK], ["Sand", "#ECE7DE"]];
+    const cmyk = (h) => { const [r, g, b] = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255); const k = 1 - Math.max(r, g, b); const f = (x) => Math.round(((1 - x - k) / (1 - k || 1)) * 100); return `C${f(r)} M${f(g)} Y${f(b)} K${Math.round(k * 100)}`; };
+    document.getElementById("swatches").innerHTML = cols.map(([n, h]) => `<i style="background:${h}"></i><span>${n}</span><code>${h.toUpperCase()} · ${cmyk(h)}</code>`).join("");
+  }
+
+  // ---------- controls ----------
+  function seg(id, key, after) {
+    const el = document.getElementById(id);
+    el.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === state[key])));
+    el.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      state[key] = b.dataset.v; save();
+      el.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      after();
+    });
+  }
+  const redrawAll = () => { drawGrid(); drawLocks(); playMotion(); };
+  seg("mat", "mat", () => { drawGrid(); playMotion(); });
+  seg("pal", "pal", redrawAll);
+  seg("ori", "ori", redrawAll);
+  const opts = CONCEPTS.map((c) => `<option value="${c.key}">${c.name}</option>`).join("");
+  const msel = document.getElementById("msel"), lsel = document.getElementById("lsel");
+  msel.innerHTML = opts; lsel.innerHTML = opts;
+  msel.value = state.pick; lsel.value = state.pick;
+  msel.addEventListener("change", playMotion);
+  lsel.addEventListener("change", () => { state.pick = lsel.value; save(); drawGrid(); drawLocks(); });
+  document.getElementById("replay").addEventListener("click", playMotion);
+  document.getElementById("grid").addEventListener("click", (e) => {
+    const b = e.target.closest(".use"); if (!b) return;
+    state.pick = b.dataset.k; save(); lsel.value = msel.value = state.pick;
+    drawGrid(); drawLocks(); playMotion();
+    document.getElementById("motion").scrollIntoView({ behavior: "smooth" });
+  });
+  redrawAll();
+  const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { playMotion(); io.disconnect(); } }), { threshold: 0.5 });
+  io.observe(document.getElementById("mstage"));
+})();
+</script>
+</body>
+</html>

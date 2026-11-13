@@ -1,0 +1,51 @@
+{
+  "id": "call-confirmed",
+  "group": "client",
+  "kind": "branded",
+  "name": "Call booked",
+  "when": "Right after a call is booked.",
+  "subject": "Call booked: {{call_date}}",
+  "preheader": "The link, and what we’ll cover.",
+  "label": "call booked",
+  "blocks": [
+    {
+      "type": "hero",
+      "kicker": "Call booked",
+      "title": "See you on {{call_day}}.",
+      "text": "{{call_date}}, {{call_time}}. 20 minutes on Google Meet, no download needed.",
+      "button": {
+        "label": "Join the call",
+        "href": "{{meet_link}}"
+      }
+    },
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, thanks for making the time. Here’s what we’ll cover:"
+    },
+    {
+      "type": "steps",
+      "items": [
+        [
+          "Where customers find you",
+          "Google, Maps, Instagram, word of mouth: what’s working today."
+        ],
+        [
+          "What slows them down",
+          "The moments people give up before they call or book."
+        ],
+        [
+          "What we’d do first",
+          "In what order, how long it takes and what it costs."
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Need a different time? Reply to this email and I’ll move it."
+    },
+    {
+      "type": "signoff",
+      "text": "See you then,"
+    }
+  ]
+}

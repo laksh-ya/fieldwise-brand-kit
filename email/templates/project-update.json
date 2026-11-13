@@ -1,0 +1,74 @@
+{
+  "id": "project-update",
+  "group": "project",
+  "kind": "branded",
+  "name": "Weekly update",
+  "when": "Every Friday during the project.",
+  "subject": "{{company}}: week {{week}} update",
+  "preheader": "Done this week, next week, and one thing we need.",
+  "label": "week {{week}}",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "Week {{week}}: {{headline}}"
+    },
+    {
+      "type": "progress",
+      "current": 2,
+      "labels": [
+        "Plan",
+        "Design",
+        "Build",
+        "Launch"
+      ]
+    },
+    {
+      "type": "image",
+      "src": "sample-new-desktop",
+      "alt": "The new {{company}} home page",
+      "href": "{{preview_link}}",
+      "caption": "The new home page. Tap it to open the preview on your phone."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Done this week"
+    },
+    {
+      "type": "list",
+      "stone": "green",
+      "items": [
+        "{{done_1}}",
+        "{{done_2}}",
+        "{{done_3}}"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Next week"
+    },
+    {
+      "type": "list",
+      "stone": "grey",
+      "items": [
+        "{{next_1}}",
+        "{{next_2}}"
+      ]
+    },
+    {
+      "type": "note",
+      "title": "Needed from you",
+      "text": "{{needed}}"
+    },
+    {
+      "type": "button",
+      "label": "Open the preview",
+      "href": "{{preview_link}}"
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

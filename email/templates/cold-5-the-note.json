@@ -1,0 +1,95 @@
+{
+  "id": "cold-5-the-note",
+  "group": "cold",
+  "kind": "branded",
+  "name": "5 · The note",
+  "when": "When they say yes. The short audit you promised, with their own site on a phone.",
+  "subject": "The note for {{company}}",
+  "preheader": "Three changes, in the order we’d make them.",
+  "label": "for {{company}}",
+  "blocks": [
+    {
+      "type": "hero",
+      "kicker": "The note",
+      "title": "Three changes for {{company}}",
+      "text": "What we found on your website, your Google profile and how a new patient books today."
+    },
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, here’s the note I mentioned. It starts with your site as a new patient sees it:"
+    },
+    {
+      "type": "phone",
+      "src": "sample-old-phone",
+      "alt": "{{company}}’s website on a phone today",
+      "tone": "bad",
+      "kicker": "Your site today",
+      "title": "{{load_time}} seconds to open on a phone",
+      "items": [
+        "{{issue_1}}",
+        "{{issue_2}}",
+        "{{issue_3}}"
+      ]
+    },
+    {
+      "type": "status",
+      "items": [
+        [
+          "good",
+          "Your reviews are strong",
+          "{{rating}} stars from {{review_count}} patients. That’s the hardest part to build, and you already have it."
+        ],
+        [
+          "work",
+          "The site is slow on phones",
+          "Mostly large photos and a heavy theme. <b>Fix:</b> rebuild the main pages lean, so they open in under two seconds."
+        ],
+        [
+          "work",
+          "You’re on page two for “{{search_term}}”",
+          "The clinics above you post photos often and reply to reviews. <b>Fix:</b> complete the Google profile, add photos monthly, reply to every review."
+        ],
+        [
+          "missing",
+          "Booking still starts with a phone call",
+          "If nobody picks up, the patient calls the next clinic. <b>Fix:</b> a short booking form that sends each request to your front desk on WhatsApp."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What it would take"
+    },
+    {
+      "type": "steps",
+      "items": [
+        [
+          "Week 1",
+          "Google profile fixed, and the new home page designed."
+        ],
+        [
+          "Week 2",
+          "The rest of the site built, with the booking form."
+        ],
+        [
+          "Week 3",
+          "Checked on real phones, then live."
+        ]
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Want to see it on your own site?",
+      "text": "15 minutes. I’ll share my screen; nothing to prepare. Between {{price_range}}, depending on pages.",
+      "button": {
+        "label": "Book a call",
+        "href": "{{call_link}}"
+      }
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

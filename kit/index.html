@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fieldwise Brand Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="The Fieldwise sea-glass mark, colours, type and applications in one playground.">
+<meta name="theme-color" content="#FBFAF6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1D2225" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,400..700&family=Google+Sans+Code:wght@400;500;600&family=Inter+Tight:wght@500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kit.css">
+<link rel="stylesheet" href="art.css">
+</head>
+<body>
+<aside class="side" aria-label="Brand kit" data-host="side">
+  <div class="brand"><span id="brandMark"></span><div><b class="wm">Fieldwise</b><small>Brand kit</small></div></div>
+  <nav class="nav" id="navD" data-glide="nav"></nav>
+  <div class="cz-host"></div>
+</aside>
+<header class="topbar"><span id="tbMark"></span><div class="tt"><div class="tt-a"><b class="wm">Fieldwise</b><span>Brand kit</span></div><div class="tt-b" aria-hidden="true"><b id="tbT">Choose</b><span id="tbS"></span></div></div><button class="cz-open" data-act="sheet" aria-label="Customise"></button></header>
+<main class="main"><div id="view" data-host="view"></div>
+  <footer class="foot" data-host="foot">
+    <div class="foot-water" id="footWater"></div>
+    <div class="foot-in">
+      <h2>Grow where it counts.</h2>
+      <div class="foot-links"><span>fieldwisesolutions1@gmail.com</span><span>+91 92014 79878</span><a href="email/">emails</a><a href="https://github.com/laksh-ya/fieldwise-brand-kit">source</a></div>
+    </div>
+  </footer>
+</main>
+<nav class="tabbar" id="tabs" aria-label="Sections" data-glide="tabs" data-glide-inset="4"></nav>
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" aria-hidden="true" role="dialog" aria-label="Customise">
+  <div class="grab"></div>
+  <div class="sh-h"><b>Customise</b><button class="pill solid" data-act="sheetclose">Done</button></div>
+  <div class="sh-b cz-host" data-host="sheet"></div>
+</div>
+<div class="viewer" id="viewer" hidden>
+  <div class="vh"><div class="vt"><b id="vT"></b><span id="vS"></span></div><button class="icon-btn" id="vClose" data-act="close" aria-label="Close"></button></div>
+  <div class="vdl" id="vDl"></div>
+  <div class="track" id="track"></div>
+  <div class="vf"><button class="icon-btn" id="vPrev" data-act="vprev" aria-label="Previous"></button><span id="vN"></span><button class="icon-btn" id="vNext" data-act="vnext" aria-label="Next"></button></div>
+</div>
+<div class="wp" id="wp" hidden role="dialog" aria-label="archive">
+  <div class="wp-h"><b>archive</b><button class="wp-done" data-act="wpclose">done</button></div>
+  <div class="wp-tabs" id="wpTabs"></div>
+  <div class="wp-b" id="wpb"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="../lab/pebbles.js"></script>
+<script src="../lab/layouts-all.js"></script>
+<script src="water-layer.js"></script>
+<script src="kit.js"></script>
+</body>
+</html>

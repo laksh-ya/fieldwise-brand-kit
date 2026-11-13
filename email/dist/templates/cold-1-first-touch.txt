@@ -6,7 +6,9 @@ I searched “{{search_term}}” this morning. {{company}} showed up {{observati
 
 Your site also takes about {{load_time}} seconds to open on a phone, which is where most of those searches happen. Many people give up before it loads.
 
-We’re Fieldwise. We build fast websites, sort out Google listings and set up bookings that land on WhatsApp. For a resort in Indore, we built the site, online room booking and event enquiries that go straight to the owner’s phone.
+We’re Fieldwise. We build fast websites, sort out Google listings and set up bookings that land on WhatsApp. Here’s one from this year:
+
+- A resort in Indore: Website, online room booking, and event enquiries that go straight to WhatsApp.
 
 I’ve written a short note on the three changes that would help {{company}} most. Shall I send it over?
 
@@ -14,6 +16,5 @@ Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 P.S. If someone else looks after the website, who should I ask?

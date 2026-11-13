@@ -1,0 +1,31 @@
+{
+  "id": "cold-4-last-note",
+  "group": "cold",
+  "kind": "letter",
+  "name": "4 · Last note",
+  "when": "Day 14. Close the loop politely and leave the door open. Plain on purpose.",
+  "subject": "Closing the loop",
+  "preheader": "I’ll stop here, and the note stays ready.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}},"
+    },
+    {
+      "type": "text",
+      "text": "I’ll stop here so I’m not filling your inbox."
+    },
+    {
+      "type": "text",
+      "text": "If more bookings from Google moves up the list later, reply “later” and I’ll check back in three months. The note stays ready whenever you want it."
+    },
+    {
+      "type": "text",
+      "text": "Wishing {{company}} a busy season."
+    },
+    {
+      "type": "signoff",
+      "text": "Best,"
+    }
+  ]
+}

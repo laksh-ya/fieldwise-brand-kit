@@ -1,0 +1,94 @@
+{
+  "id": "invoice",
+  "group": "billing",
+  "kind": "branded",
+  "name": "Invoice",
+  "when": "With every invoice. Attach the PDF too.",
+  "subject": "Invoice {{invoice_no}} from Fieldwise",
+  "preheader": "{{amount}} due by {{due_date}}.",
+  "label": "invoice",
+  "blocks": [
+    {
+      "type": "hero",
+      "kicker": "Invoice {{invoice_no}}",
+      "title": "{{amount}} due by {{due_date}}",
+      "text": "For {{invoice_for}}."
+    },
+    {
+      "type": "details",
+      "rows": [
+        [
+          "Invoice",
+          "{{invoice_no}}"
+        ],
+        [
+          "Date",
+          "{{invoice_date}}"
+        ],
+        [
+          "Due",
+          "{{due_date}}"
+        ]
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        "Item",
+        "Amount"
+      ],
+      "rows": [
+        [
+          "{{line_1}}",
+          "{{line_1_note}}",
+          "{{line_1_price}}"
+        ]
+      ],
+      "foot": [
+        [
+          "Total due",
+          "{{amount}}"
+        ]
+      ]
+    },
+    {
+      "type": "details",
+      "title": "How to pay",
+      "rows": [
+        [
+          "UPI",
+          "{{upi_id}}"
+        ],
+        [
+          "Bank",
+          "{{bank_name}}"
+        ],
+        [
+          "Account name",
+          "Fieldwise"
+        ],
+        [
+          "Account no.",
+          "{{account_no}}"
+        ],
+        [
+          "IFSC",
+          "{{ifsc}}"
+        ]
+      ]
+    },
+    {
+      "type": "button",
+      "label": "Download the invoice",
+      "href": "{{invoice_link}}"
+    },
+    {
+      "type": "text",
+      "text": "Once it’s paid, we’ll send a receipt the same day."
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

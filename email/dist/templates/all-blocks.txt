@@ -1,0 +1,89 @@
+Subject: Every Fieldwise email block
+
+hero
+
+A hero with the glass mark
+
+Title, optional kicker, text and button. Add dark: true for the slate version.
+
+Button: https://example.com
+
+heading (level 1)
+
+text: a paragraph. Bold and links (https://example.com) are fine.
+
+heading (level 2)
+
+- list: Stone bullets, with or without a bold title.
+- stone: green, grey, amber, or mixed (default).
+
+1. numbered: a plain 1, 2, 3 list
+2. Best inside letters
+
+1. steps: Numbered glass stones joined by a line.
+2. Use for: Timelines, agendas, what happens next.
+
+- features: Two or three columns.
+- Stack: They stack on phones.
+- Keep short: Five to eight words.
+
+phone
+A screenshot beside text
+- tone: bad gives amber stones
+- Make one with mockup.js
+
+image: any asset or https URL, with an optional caption and link.
+
+work
+- A resort in Indore: Website, online room booking, and event enquiries that go straight to WhatsApp.
+- OffPay: 11,700+ people used it in its first eight weeks; two in three found it on Google.
+
+metrics: 2,410 (+18% on September)
+Four cards: 96 (+12%)
+
+stats: a dark band of big numbers
+1.6 s to open
+24/7 bookings
+0 missed enquiries
+
+[good] status: good
+What already works.
+
+[needs work] needs work
+What to fix.
+
+[missing] missing
+What isn’t there yet.
+
+[x] progress  [x] Design  [ ] Build  [ ] Launch
+
+details
+Label: Value
+Rows: As many as needed
+
+Item (Optional note): ₹10,000
+Total: ₹10,000
+
+note: a sand panel for one important thing. tone: green for good news.
+
+“quote: only a real quote from a real client, with their permission.”
+— Name, Business
+
+cta: the main ask
+A sand panel with the mark and one button.
+Button: https://example.com
+
+button: https://example.com
+
+—
+
+signoff (always last, before ps)
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+
+ps: a P.S. line.
+
+--
+Fieldwise · Websites, search and brand. Grow where it counts.
+fieldwisesolutions1@gmail.com · +91 92014 79878

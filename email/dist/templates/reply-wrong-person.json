@@ -1,0 +1,23 @@
+{
+  "id": "reply-wrong-person",
+  "group": "replies",
+  "kind": "letter",
+  "name": "Wrong person",
+  "when": "They said someone else handles it.",
+  "subject": "Re: {{company}} on Google",
+  "preheader": "Who should I speak to?",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, thanks for the reply."
+    },
+    {
+      "type": "text",
+      "text": "Would you mind pointing me to whoever handles the website or marketing? I’ll keep it short with them, and I’m happy to mention you suggested it."
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

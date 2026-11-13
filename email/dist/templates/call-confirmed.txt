@@ -1,20 +1,18 @@
 Subject: Call booked: {{call_date}}
 
+Call booked
+
 See you on {{call_day}}.
 
-Hi {{first_name}}, thanks for making the time. Here are the details.
-
-When: {{call_date}}, {{call_time}}
-How long: 20 minutes
-Where: Google Meet, no download needed
+{{call_date}}, {{call_time}}. 20 minutes on Google Meet, no download needed.
 
 Join the call: {{meet_link}}
 
-What we’ll cover
+Hi {{first_name}}, thanks for making the time. Here’s what we’ll cover:
 
-- Where your customers find you today
-- What’s slowing them down before they call or book
-- What we’d do first, how long it takes and what it costs
+1. Where customers find you: Google, Maps, Instagram, word of mouth: what’s working today.
+2. What slows them down: The moments people give up before they call or book.
+3. What we’d do first: In what order, how long it takes and what it costs.
 
 Need a different time? Reply to this email and I’ll move it.
 
@@ -22,7 +20,6 @@ See you then,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 --
 Fieldwise · Websites, search and brand. Grow where it counts.

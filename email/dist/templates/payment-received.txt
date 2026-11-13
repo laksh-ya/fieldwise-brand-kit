@@ -1,8 +1,10 @@
 Subject: Payment received, thank you
 
-Thank you, we’ve received {{amount}}.
+Receipt
 
-Hi {{first_name}}, this confirms your payment. Keep this email for your records; the PDF receipt is attached.
+Thank you. We’ve received {{amount}}.
+
+Keep this email for your records; the PDF receipt is attached.
 
 Invoice: {{invoice_no}}
 Amount: {{amount}}
@@ -10,13 +12,13 @@ Paid on: {{paid_on}}
 Method: {{pay_method}}
 Reference: {{pay_ref}}
 
-Balance: {{balance}}
+Balance
+{{balance}}
 
 Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 --
 Fieldwise · Websites, search and brand. Grow where it counts.

@@ -1,18 +1,19 @@
 Subject: A small favour, {{first_name}}
 
+A small favour
+
 Would you leave us a review?
 
-Hi {{first_name}}, it’s been a month since {{client_site}} went live. If you’re happy with the work, a short Google review helps other business owners find us.
+It’s been a month since {{client_site}} went live. A short Google review helps other owners find us.
 
 Leave a review: {{review_link}}
 
-A line or two is plenty. If something isn’t right, reply to this email instead and we’ll fix it first.
+Hi {{first_name}}, a line or two is plenty. If something isn’t right, reply to this email instead and we’ll fix it first.
 
 Thank you,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 --
 Fieldwise · Websites, search and brand. Grow where it counts.

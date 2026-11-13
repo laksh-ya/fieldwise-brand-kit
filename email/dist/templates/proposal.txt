@@ -1,6 +1,10 @@
 Subject: Your proposal from Fieldwise
 
+Proposal
+
 Here’s the plan for {{company}}.
+
+Three pieces of work, live in {{timeline}}.
 
 Hi {{first_name}}, thanks for the call on {{call_day}}. This is the short version; the full proposal is linked below.
 
@@ -12,19 +16,24 @@ What we’ll do
 Hosting and care, after launch: {{care_price}} a month
 Total to build: {{total}}
 
-Timeline: {{timeline}}
-Payment: Half to start, half at launch
-Valid until: {{valid_until}}
+How it goes
 
-Read the full proposal: {{proposal_link}}
+1. Week 1: We collect your photos and logins, and design the home page.
+2. Week 2: You review the design. We build the rest, with the booking form.
+3. Week 3: Checked on real phones, then live. Half the payment is due at launch.
 
-Reply with any changes and I’ll update it the same day. When you’re ready, reply “let’s go” and we’ll send the first invoice and a kickoff date.
+Read the full proposal
+Valid until {{valid_until}}. Reply with any changes and I’ll update it the same day.
+Open the proposal: {{proposal_link}}
+
+Recent work
+- A resort in Indore: Website, online room booking, and event enquiries that go straight to WhatsApp.
+- Bus ticketing: Seat selection, QR tickets and live tracking, with every rupee accounted for.
 
 Thanks,
 {{sender_name}}
 {{sender_role}}, Fieldwise
 +91 92014 79878
-fieldwisesolutions1@gmail.com
 
 --
 Fieldwise · Websites, search and brand. Grow where it counts.

@@ -1,0 +1,23 @@
+const { chromium } = require("../pw.js");
+const path = require("path");
+(async () => {
+  const [,, out, dev = "android"] = process.argv;
+  const b = await chromium.launch({ channel: "chrome", args: ["--allow-file-access-from-files", "--enable-unsafe-swiftshader", "--use-angle=swiftshader", "--ignore-gpu-blocklist"] });
+  const ctx = dev === "android" ? await b.newContext({ viewport: { width: 412, height: 915 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }) : await b.newContext({ viewport: { width: 1440, height: 900 } });
+  await ctx.addInitScript(() => Object.defineProperty(navigator, "webdriver", { get: () => false }));
+  await ctx.grantPermissions(["clipboard-read", "clipboard-write"]).catch(() => {});
+  const p = await ctx.newPage(); const errs = []; p.on("pageerror", (e) => errs.push(e.message)); p.on("console", (m) => m.type() === "error" && errs.push(m.text()));
+  await p.goto("file://" + path.resolve("index.html") + "#water"); await p.waitForTimeout(3500);
+  await p.screenshot({ path: `${out}/${dev}-lab.png` });
+  await p.fill("#svName", "calm pool"); await p.click('[data-act="wsave"]'); await p.waitForTimeout(400);
+  await p.evaluate(() => { const r = document.querySelector("#wr-strength"); r.value = 2.6; r.dispatchEvent(new Event("input", { bubbles: true })); });
+  await p.fill("#svName", "wobbly"); await p.click('[data-act="wsave"]'); await p.waitForTimeout(400);
+  await p.click('[data-act="wpaste"]'); await p.fill("#pasteTxt", "const water = new WaterLayer(canvas, { strength: 1.8, swirl: 30, fade: 0.7, dprCap: 1.5, autoWander: false })");
+  await p.click('[data-act="wpasteok"]'); await p.waitForTimeout(500);
+  const code = await p.evaluate(() => KIT.state().water.hero.custom);
+  if (dev === "android") await p.evaluate(() => document.querySelector(".sv-list").scrollIntoView({ block: "center" })); else await p.evaluate(() => document.querySelector(".sv-list").scrollIntoView({ block: "center" }));
+  await p.waitForTimeout(600);
+  await p.screenshot({ path: `${out}/${dev}-lab2.png` });
+  console.log(dev, JSON.stringify(code), (await p.evaluate(() => KIT.state().waterSaved.map((x) => x.name))), errs);
+  await b.close();
+})();

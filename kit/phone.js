@@ -1,0 +1,28 @@
+const { chromium } = require("../pw.js");
+const path = require("path");
+(async () => {
+  const out = process.argv[2];
+  const b = await chromium.launch({ channel: "chrome", args: ["--allow-file-access-from-files", "--enable-unsafe-swiftshader", "--use-angle=swiftshader", "--ignore-gpu-blocklist"] });
+  const ctx = await b.newContext({ viewport: { width: 412, height: 915 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, userAgent: "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36" });
+  const p = await ctx.newPage(); const errs = []; p.on("pageerror", (e) => errs.push(e.message));
+  await p.goto("file://" + path.resolve("index.html")); await p.waitForTimeout(1800);
+  const shot = async (n) => { await p.waitForTimeout(700); await p.screenshot({ path: `${out}/ph-${n}.png` }); };
+  await shot("1-choose");
+  await p.tap(".pk.on .star"); await p.waitForTimeout(300);
+  await p.evaluate(() => { const pk = document.getElementById("picker"); pk.scrollLeft += pk.firstElementChild.getBoundingClientRect().width + 12; }); await p.waitForTimeout(500);
+  await p.evaluate(() => { const c = [...document.querySelectorAll(".pk")]; const pk = document.getElementById("picker"); const i = Math.round(pk.scrollLeft / (c[0].getBoundingClientRect().width + 12)); c[i].querySelector(".star").click(); }); await p.waitForTimeout(400);
+  await p.evaluate(() => document.getElementById("compare").scrollIntoView()); await shot("2-compare");
+  await p.tap(".cz-open"); await shot("3-sheet");
+  await p.evaluate(() => document.querySelector(".sheet .sh-b").scrollTop = 600); await shot("4-sheet2");
+  await p.tap(".sheet [data-act=sheetclose]"); await p.waitForTimeout(300);
+  await p.tap('.tabbar a[href="#mark"]'); await p.waitForTimeout(2600); await shot("5-mark");
+  await p.evaluate(() => scrollTo(0, 1500)); await shot("6-mark2");
+  await p.tap('.tabbar a[href="#colour"]'); await shot("7-colour");
+  await p.tap('.tabbar a[href="#type"]'); await shot("8-type");
+  await p.tap('.tabbar a[href="#apply"]'); await p.waitForTimeout(800); await shot("9-apply");
+  await p.evaluate(() => scrollTo(0, 900)); await shot("10-apply2");
+  await p.tap('.app-card[data-id="card"]'); await p.waitForTimeout(900); await shot("11-viewer");
+  await p.tap("#vNext"); await p.waitForTimeout(900); await shot("12-viewer2");
+  console.log("errors", errs);
+  await b.close();
+})();

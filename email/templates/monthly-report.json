@@ -1,0 +1,84 @@
+{
+  "id": "monthly-report",
+  "group": "after",
+  "kind": "branded",
+  "name": "Monthly report",
+  "when": "First week of each month, for care-plan clients.",
+  "subject": "{{company}}: {{month}} report",
+  "preheader": "Visits, calls, bookings and where you rank.",
+  "label": "{{month}}",
+  "blocks": [
+    {
+      "type": "banner",
+      "src": "banner-report"
+    },
+    {
+      "type": "heading",
+      "text": "{{month}} at a glance"
+    },
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, here’s what moved last month."
+    },
+    {
+      "type": "metrics",
+      "items": [
+        [
+          "{{m1}}",
+          "{{m1_value}}",
+          "{{m1_delta}}"
+        ],
+        [
+          "{{m2}}",
+          "{{m2_value}}",
+          "{{m2_delta}}"
+        ],
+        [
+          "{{m3}}",
+          "{{m3_value}}",
+          "{{m3_delta}}"
+        ],
+        [
+          "{{m4}}",
+          "{{m4_value}}",
+          "{{m4_delta}}"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What we did"
+    },
+    {
+      "type": "list",
+      "stone": "green",
+      "items": [
+        "{{did_1}}",
+        "{{did_2}}",
+        "{{did_3}}"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Next month"
+    },
+    {
+      "type": "list",
+      "stone": "grey",
+      "items": [
+        "{{plan_1}}",
+        "{{plan_2}}"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Questions about any of it? Reply here."
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

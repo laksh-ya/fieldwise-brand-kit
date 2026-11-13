@@ -43,6 +43,38 @@
   13,
   16
  ],
+ "mark-hero": [
+  210,
+  206
+ ],
+ "mark-hero-glow": [
+  210,
+  206
+ ],
+ "mark-small-white": [
+  20,
+  20
+ ],
+ "avatar": [
+  52,
+  52
+ ],
+ "step-1": [
+  35,
+  32
+ ],
+ "step-2": [
+  38,
+  32
+ ],
+ "step-3": [
+  26,
+  32
+ ],
+ "step-4": [
+  37,
+  32
+ ],
  "stone-grey": [
   19,
   16
@@ -74,5 +106,33 @@
  "band": [
   600,
   64
+ ],
+ "band-dark": [
+  600,
+  96
+ ],
+ "work-resort": [
+  560,
+  388
+ ],
+ "work-offpay": [
+  560,
+  388
+ ],
+ "work-bus": [
+  560,
+  388
+ ],
+ "sample-new-desktop": [
+  560,
+  388
+ ],
+ "sample-old-phone": [
+  266,
+  521
+ ],
+ "sample-new-phone": [
+  266,
+  521
  ]
 }

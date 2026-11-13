@@ -1,0 +1,13 @@
+{
+  "name": "fieldwise-brand-kit",
+  "private": true,
+  "description": "Fieldwise brand kit: the sea-glass logo, the playground site, and the email system.",
+  "scripts": {
+    "emails": "cd email && node build.js",
+    "draft": "cd email && node draft.js",
+    "publish": "sh publish.sh"
+  },
+  "devDependencies": {
+    "playwright-core": "1.48.2"
+  }
+}

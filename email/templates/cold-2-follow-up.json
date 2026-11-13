@@ -1,0 +1,40 @@
+{
+  "id": "cold-2-follow-up",
+  "group": "cold",
+  "kind": "letter",
+  "name": "2 · Follow-up",
+  "when": "Day 3, as a reply in the same thread. Show what’s in the note.",
+  "subject": "Re: {{company}} on Google",
+  "preheader": "What the note covers, in three parts.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, bringing this back up in case it got buried. The note covers three things:"
+    },
+    {
+      "type": "features",
+      "items": [
+        [
+          "Faster on phones",
+          "Why the site takes {{load_time}} seconds, and the fix."
+        ],
+        [
+          "Higher on Maps",
+          "Three changes that move {{company}} up for “{{search_term}}”."
+        ],
+        [
+          "Bookings on WhatsApp",
+          "A short form that sends every request to your front desk."
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "text": "It’s yours either way, no call needed. Want it?"
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "reply-not-now",
+  "group": "replies",
+  "kind": "letter",
+  "name": "“Not right now”",
+  "when": "They said it’s not the right time.",
+  "subject": "Re: {{company}} on Google",
+  "preheader": "No problem, I’ll check back.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, no problem at all, thanks for letting me know."
+    },
+    {
+      "type": "text",
+      "text": "I’ll check back in {{check_back}}. If anything changes before then, just reply here."
+    },
+    {
+      "type": "signoff",
+      "text": "Best,"
+    }
+  ]
+}

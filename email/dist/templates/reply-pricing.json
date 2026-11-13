@@ -1,0 +1,40 @@
+{
+  "id": "reply-pricing",
+  "group": "replies",
+  "kind": "letter",
+  "name": "“How much?”",
+  "when": "They asked for a price before a call.",
+  "subject": "Re: {{company}} on Google",
+  "preheader": "A straight answer on price.",
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Hi {{first_name}}, fair question. Here’s what projects like this usually come to:"
+    },
+    {
+      "type": "details",
+      "rows": [
+        [
+          "Website",
+          "Between {{price_range}}, depending on pages"
+        ],
+        [
+          "Google profile",
+          "Included"
+        ],
+        [
+          "Hosting and care",
+          "{{care_price}} a month after launch, stop any time"
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "text": "I can give you an exact number after a 15-minute call, once I know which pages you need. Does {{slot_1}} work?"
+    },
+    {
+      "type": "signoff",
+      "text": "Thanks,"
+    }
+  ]
+}
