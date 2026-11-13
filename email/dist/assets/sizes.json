@@ -1,0 +1,78 @@
+{
+ "logo": [
+  136,
+  42
+ ],
+ "logo-white": [
+  136,
+  42
+ ],
+ "logo-print": [
+  136,
+  42
+ ],
+ "mark": [
+  65,
+  64
+ ],
+ "mark-tint": [
+  33,
+  32
+ ],
+ "mark-grey": [
+  20,
+  20
+ ],
+ "stone-1": [
+  17,
+  16
+ ],
+ "stone-2": [
+  13,
+  16
+ ],
+ "stone-3": [
+  19,
+  16
+ ],
+ "stone-4": [
+  18,
+  16
+ ],
+ "stone-amber": [
+  13,
+  16
+ ],
+ "stone-grey": [
+  19,
+  16
+ ],
+ "banner-welcome": [
+  600,
+  200
+ ],
+ "banner-live": [
+  600,
+  200
+ ],
+ "banner-proposal": [
+  600,
+  160
+ ],
+ "banner-report": [
+  600,
+  160
+ ],
+ "banner-news": [
+  600,
+  200
+ ],
+ "banner-thanks": [
+  600,
+  160
+ ],
+ "band": [
+  600,
+  64
+ ]
+}

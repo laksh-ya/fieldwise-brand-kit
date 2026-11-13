@@ -1,0 +1,18 @@
+Subject: Re: {{company}} on Google
+
+Hi {{first_name}}, here’s the short version.
+
+1. Websites that open in under two seconds on a phone and are easy for your team to update
+2. Google and Maps: a complete profile, photos, reviews and the searches you should show up for
+3. Bookings and enquiries that reach you on WhatsApp and email, so none get missed
+4. Care after launch: hosting, fixes, and a one-page note each month on what moved
+
+Some of our recent work: {{work_link}}
+
+I can also send the note for {{company}}: three specific changes, in the order we’d make them. Want it?
+
+Thanks,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com

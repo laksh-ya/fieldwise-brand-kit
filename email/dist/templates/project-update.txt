@@ -1,0 +1,35 @@
+Subject: {{company}}: week {{week}} update
+
+Week {{week}}: {{headline}}
+
+Hi {{first_name}}, here’s where things are.
+
+Done
+
+- {{done_1}}
+- {{done_2}}
+- {{done_3}}
+
+Next week
+
+- {{next_1}}
+- {{next_2}}
+
+Needed from you
+
+{{needed}}
+
+See the preview: {{preview_link}}
+
+Status: On track
+Launch: {{launch_date}}
+
+Thanks,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com
+
+--
+Fieldwise · Websites, search and brand. Grow where it counts.
+fieldwisesolutions1@gmail.com · +91 92014 79878

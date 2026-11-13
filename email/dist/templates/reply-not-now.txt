@@ -1,0 +1,11 @@
+Subject: Re: {{company}} on Google
+
+Hi {{first_name}}, no problem at all, thanks for letting me know.
+
+I’ll check back in {{check_back}}. If anything changes before then, just reply here.
+
+Best,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com

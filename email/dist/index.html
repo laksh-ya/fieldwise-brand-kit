@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fieldwise emails</title>
+<link rel="icon" href="assets/mark-tint.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #F3F1EC; --panel: #FFFFFF; --soft: #ECE8E0; --ink: #18241F; --ink2: #4A544E; --line: #E2DED5; --green: #2C8A64; --sel: #E3EEE7; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #15191B; --panel: #1D2225; --soft: #262C30; --ink: #F1F0EC; --ink2: #B9C0BA; --line: #2F363A; --sel: #22332B; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #15191B; --panel: #1D2225; --soft: #262C30; --ink: #F1F0EC; --ink2: #B9C0BA; --line: #2F363A; --sel: #22332B; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.45 Inter, system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+.app { display: grid; grid-template-columns: 290px 1fr; height: 100dvh; }
+aside { border-right: 1px solid var(--line); overflow: auto; padding: 22px 14px 40px; }
+.brand { display: flex; align-items: center; gap: 10px; padding: 0 8px 18px; }
+.brand img { height: 26px; }
+.brand span { font-weight: 600; letter-spacing: -.01em; }
+h3 { margin: 18px 8px 6px; font-size: 13px; font-weight: 500; color: var(--ink2); }
+.it { display: flex; align-items: center; justify-content: space-between; width: 100%; text-align: left; padding: 9px 10px; border-radius: 12px; transition: background .2s; }
+.it b { font-weight: 500; }
+.it i { font-style: normal; font-size: 12px; color: var(--ink2); }
+.it:hover { background: var(--soft); }
+.it[aria-current="true"] { background: var(--sel); }
+main { display: flex; flex-direction: column; min-width: 0; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 16px 22px; border-bottom: 1px solid var(--line); background: var(--panel); }
+.meta { flex: 1 1 320px; min-width: 0; }
+.meta .sj { font-weight: 600; font-size: 16px; overflow-wrap: anywhere; }
+.meta .ph { color: var(--ink2); font-size: 14px; overflow-wrap: anywhere; }
+.meta .wh { color: var(--ink2); font-size: 13.5px; margin-top: 6px; }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.tools button, .tools a { padding: 8px 13px; border-radius: 999px; background: var(--soft); font-size: 13.5px; text-decoration: none; color: inherit; transition: background .2s, transform .15s; }
+.tools button:active, .tools a:active { transform: scale(.96); }
+.tools button[aria-pressed="true"] { background: var(--ink); color: var(--panel); }
+.stage { flex: 1; overflow: auto; display: flex; justify-content: center; padding: 22px; }
+iframe { border: 0; width: 100%; max-width: 760px; height: 100%; min-height: 600px; background: transparent; border-radius: 14px; transition: max-width .35s cubic-bezier(.2,.8,.2,1); }
+iframe.phone { max-width: 390px; }
+.tags { display: none; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tags.on { display: flex; }
+.tags code { font: 12.5px ui-monospace, Menlo, monospace; background: var(--soft); padding: 3px 7px; border-radius: 7px; }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); opacity: 0; background: var(--ink); color: var(--panel); padding: 10px 16px; border-radius: 999px; font-size: 14px; transition: .25s; pointer-events: none; }
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+@media (max-width: 860px) {
+  .app { display: block; height: auto; }
+  aside { border: 0; padding: 14px 16px 0; overflow: visible; }
+  .brand { padding: 4px 0 10px; }
+  aside section { display: contents; }
+  aside h3 { display: none; }
+  .nav { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x proximity; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .it { width: auto; flex: none; white-space: nowrap; background: var(--panel); padding: 9px 13px; border-radius: 999px; scroll-snap-align: start; gap: 8px; }
+  .bar { padding: 14px 16px; position: sticky; top: 0; z-index: 2; }
+  .tools .wd { display: none; }
+  .stage { padding: 12px 0 40px; }
+  iframe, iframe.phone { max-width: 100%; border-radius: 0; min-height: 80dvh; }
+}
+</style></head>
+<body>
+<div class="app">
+  <aside><div class="brand"><img src="assets/mark-tint.png" alt=""><span>fieldwise emails</span></div><div class="nav"><section><h3>cold outreach</h3><button class="it" data-id="cold-1-first-touch"><b>1 · first email</b><i>plain</i></button><button class="it" data-id="cold-2-follow-up"><b>2 · follow-up</b><i>plain</i></button><button class="it" data-id="cold-3-free-tip"><b>3 · one free fix</b><i>plain</i></button><button class="it" data-id="cold-4-last-note"><b>4 · last note</b><i>plain</i></button><button class="it" data-id="cold-5-the-note"><b>5 · the note</b></button></section><section><h3>replies</h3><button class="it" data-id="reply-interested"><b>they’re interested</b><i>plain</i></button><button class="it" data-id="reply-pricing"><b>“how much?”</b><i>plain</i></button><button class="it" data-id="reply-send-info"><b>“send me details”</b><i>plain</i></button><button class="it" data-id="reply-not-now"><b>“not right now”</b><i>plain</i></button><button class="it" data-id="reply-wrong-person"><b>wrong person</b><i>plain</i></button></section><section><h3>winning the project</h3><button class="it" data-id="enquiry-reply"><b>reply to an enquiry</b><i>plain</i></button><button class="it" data-id="call-confirmed"><b>call booked</b></button><button class="it" data-id="proposal"><b>proposal</b></button><button class="it" data-id="proposal-follow-up"><b>proposal follow-up</b><i>plain</i></button></section><section><h3>during the project</h3><button class="it" data-id="welcome"><b>welcome and kickoff</b></button><button class="it" data-id="project-update"><b>weekly update</b></button><button class="it" data-id="launch"><b>site is live</b></button></section><section><h3>billing</h3><button class="it" data-id="invoice"><b>invoice</b></button><button class="it" data-id="payment-reminder"><b>payment reminder</b><i>plain</i></button><button class="it" data-id="payment-received"><b>payment received</b></button></section><section><h3>after launch</h3><button class="it" data-id="monthly-report"><b>monthly report</b></button><button class="it" data-id="review-request"><b>review request</b></button><button class="it" data-id="newsletter"><b>monthly newsletter</b></button></section><section><h3>basics</h3><button class="it" data-id="signature"><b>email signature</b><i>plain</i></button></section></div></aside>
+  <main>
+    <div class="bar">
+      <div class="meta"><div class="sj" id="sj"></div><div class="ph" id="ph"></div><div class="wh" id="wh"></div><div class="tags" id="tags"></div></div>
+      <div class="tools">
+        <button data-a="wide" class="wd" aria-pressed="true">desktop</button><button data-a="phone" class="wd" aria-pressed="false">phone</button>
+        <button data-a="dark" aria-pressed="false">dark</button>
+        <button data-a="tags" aria-pressed="false">tags</button>
+        <button data-a="html">copy html</button><button data-a="text">copy text</button><button data-a="rich">copy email</button>
+        <a id="dl" download>download</a>
+      </div>
+    </div>
+    <div class="stage"><iframe id="fr" title="email preview"></iframe></div>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const INDEX = [{"id":"cold-1-first-touch","group":"cold","name":"1 · First email","kind":"plain","when":"Day 1. One real observation, one small ask. Send from your own inbox, as plain text if you can.","subject":"{{company}} on Google","preheader":"I searched {{search_term}} this morning.","sampleSubject":"Sunrise Dental Care on Google","samplePre":"I searched dentist in Arera Colony this morning.","tags":["company","search_term","first_name","observation","load_time"]},{"id":"cold-2-follow-up","group":"cold","name":"2 · Follow-up","kind":"plain","when":"Day 3, as a reply in the same thread. Say what’s in the note.","subject":"Re: {{company}} on Google","preheader":"What the note covers.","sampleSubject":"Re: Sunrise Dental Care on Google","samplePre":"What the note covers.","tags":["company","first_name"]},{"id":"cold-3-free-tip","group":"cold","name":"3 · One free fix","kind":"plain","when":"Day 7, new thread. Give away one fix they can do themselves.","subject":"One thing for {{company}} this week","preheader":"A fix you can make today, no help needed.","sampleSubject":"One thing for Sunrise Dental Care this week","samplePre":"A fix you can make today, no help needed.","tags":["company","first_name","quick_win"]},{"id":"cold-4-last-note","group":"cold","name":"4 · Last note","kind":"plain","when":"Day 14. Close the loop politely and leave the door open.","subject":"Closing the loop","preheader":"I’ll stop here.","sampleSubject":"Closing the loop","samplePre":"I’ll stop here.","tags":["first_name","company"]},{"id":"cold-5-the-note","group":"cold","name":"5 · The note","kind":"branded","when":"When they say yes. The short audit you promised, in order of impact.","subject":"The note for {{company}}","preheader":"Three changes, in the order we’d make them.","sampleSubject":"The note for Sunrise Dental Care","samplePre":"Three changes, in the order we’d make them.","tags":["company","first_name","rating","review_count","load_time","search_term","price_range","call_link"]},{"id":"reply-interested","group":"replies","name":"They’re interested","kind":"plain","when":"They replied yes or asked to talk.","subject":"Re: {{company}} on Google","preheader":"Two times that work this week.","sampleSubject":"Re: Sunrise Dental Care on Google","samplePre":"Two times that work this week.","tags":["company","first_name","slot_1","slot_2","call_link"]},{"id":"reply-pricing","group":"replies","name":"“How much?”","kind":"plain","when":"They asked for a price before a call.","subject":"Re: {{company}} on Google","preheader":"A straight answer on price.","sampleSubject":"Re: Sunrise Dental Care on Google","samplePre":"A straight answer on price.","tags":["company","first_name","price_range","care_price","slot_1"]},{"id":"reply-send-info","group":"replies","name":"“Send me details”","kind":"plain","when":"They asked for more information first.","subject":"Re: {{company}} on Google","preheader":"What we do, in four lines.","sampleSubject":"Re: Sunrise Dental Care on Google","samplePre":"What we do, in four lines.","tags":["company","first_name","work_link"]},{"id":"reply-not-now","group":"replies","name":"“Not right now”","kind":"plain","when":"They said it’s not the right time.","subject":"Re: {{company}} on Google","preheader":"No problem, I’ll check back.","sampleSubject":"Re: Sunrise Dental Care on Google","samplePre":"No problem, I’ll check back.","tags":["company","first_name","check_back"]},{"id":"reply-wrong-person","group":"replies","name":"Wrong person","kind":"plain","when":"They said someone else handles it.","subject":"Re: {{company}} on Google","preheader":"Who should I speak to?","sampleSubject":"Re: Sunrise Dental Care on Google","samplePre":"Who should I speak to?","tags":["company","first_name"]},{"id":"enquiry-reply","group":"client","name":"Reply to an enquiry","kind":"plain","when":"Someone filled in the form on the website. Reply within a working day.","subject":"Re: your enquiry","preheader":"Thanks for getting in touch. Here’s the next step.","sampleSubject":"Re: your enquiry","samplePre":"Thanks for getting in touch. Here’s the next step.","tags":["first_name","topic","call_link"]},{"id":"call-confirmed","group":"client","name":"Call booked","kind":"branded","when":"Right after a call is booked.","subject":"Call booked: {{call_date}}","preheader":"The link, and what we’ll cover.","sampleSubject":"Call booked: Thursday, 20 November","samplePre":"The link, and what we’ll cover.","tags":["call_date","call_day","first_name","call_time","meet_link"]},{"id":"proposal","group":"client","name":"Proposal","kind":"branded","when":"Within two days of the call. The short version, with the full proposal linked.","subject":"Your proposal from Fieldwise","preheader":"Scope, price and timeline for {{company}}.","sampleSubject":"Your proposal from Fieldwise","samplePre":"Scope, price and timeline for Sunrise Dental Care.","tags":["company","first_name","call_day","item_1","item_1_note","item_1_price","item_2","item_2_note","item_2_price","item_3","item_3_note","item_3_price","care_price","total","timeline","valid_until","proposal_link"]},{"id":"proposal-follow-up","group":"client","name":"Proposal follow-up","kind":"plain","when":"Four or five days after the proposal, if there’s no reply.","subject":"Re: Your proposal from Fieldwise","preheader":"Happy to change anything in it.","sampleSubject":"Re: Your proposal from Fieldwise","samplePre":"Happy to change anything in it.","tags":["first_name","smallest_piece"]},{"id":"welcome","group":"project","name":"Welcome and kickoff","kind":"branded","when":"The day the project is confirmed.","subject":"Welcome to Fieldwise, {{first_name}}","preheader":"How the next {{weeks}} weeks go, and what we need from you.","sampleSubject":"Welcome to Fieldwise, Asha","samplePre":"How the next three weeks go, and what we need from you.","tags":["first_name","weeks","company","upload_link"]},{"id":"project-update","group":"project","name":"Weekly update","kind":"branded","when":"Every Friday during the project.","subject":"{{company}}: week {{week}} update","preheader":"Done this week, next week, and one thing we need.","sampleSubject":"Sunrise Dental Care: week 2 update","samplePre":"Done this week, next week, and one thing we need.","tags":["company","week","headline","first_name","done_1","done_2","done_3","next_1","next_2","needed","preview_link","launch_date"]},{"id":"launch","group":"project","name":"Site is live","kind":"branded","when":"Launch day.","subject":"Your new website is live","preheader":"{{client_site}} went live this morning.","sampleSubject":"Your new website is live","samplePre":"sunrisedental.in went live this morning.","tags":["client_site","first_name","client_url"]},{"id":"invoice","group":"billing","name":"Invoice","kind":"branded","when":"With every invoice. Attach the PDF too.","subject":"Invoice {{invoice_no}} from Fieldwise","preheader":"{{amount}} due by {{due_date}}.","sampleSubject":"Invoice FW-2026-014 from Fieldwise","samplePre":"₹32,500 due by 29 November 2026.","tags":["invoice_no","amount","due_date","first_name","invoice_for","invoice_date","line_1","line_1_note","line_1_price","upi_id","bank_name","account_no","ifsc","invoice_link"]},{"id":"payment-reminder","group":"billing","name":"Payment reminder","kind":"plain","when":"A few days after the due date. Keep it light.","subject":"Re: Invoice {{invoice_no}} from Fieldwise","preheader":"A quick reminder.","sampleSubject":"Re: Invoice FW-2026-014 from Fieldwise","samplePre":"A quick reminder.","tags":["invoice_no","first_name","amount","due_date"]},{"id":"payment-received","group":"billing","name":"Payment received","kind":"branded","when":"The day a payment arrives.","subject":"Payment received, thank you","preheader":"{{amount}} for invoice {{invoice_no}}.","sampleSubject":"Payment received, thank you","samplePre":"₹32,500 for invoice FW-2026-014.","tags":["amount","invoice_no","first_name","paid_on","pay_method","pay_ref","balance"]},{"id":"monthly-report","group":"after","name":"Monthly report","kind":"branded","when":"First week of each month, for care-plan clients.","subject":"{{company}}: {{month}} report","preheader":"Visits, calls, bookings and where you rank.","sampleSubject":"Sunrise Dental Care: October report","samplePre":"Visits, calls, bookings and where you rank.","tags":["company","month","first_name","m1","m1_value","m1_delta","m2","m2_value","m2_delta","m3","m3_value","m3_delta","m4","m4_value","m4_delta","did_1","did_2","did_3","plan_1","plan_2"]},{"id":"review-request","group":"after","name":"Review request","kind":"branded","when":"About a month after launch, once they’ve seen results.","subject":"A small favour, {{first_name}}","preheader":"Two minutes, and it helps more than you’d think.","sampleSubject":"A small favour, Asha","samplePre":"Two minutes, and it helps more than you’d think.","tags":["first_name","client_site","review_link"]},{"id":"newsletter","group":"after","name":"Monthly newsletter","kind":"branded","when":"Once a month, to clients and anyone who signed up.","subject":"{{month}} notes from Fieldwise","preheader":"One idea, three quick wins, and what we shipped.","sampleSubject":"October notes from Fieldwise","samplePre":"One idea, three quick wins, and what we shipped.","tags":["month","nl_title","unsubscribe_link"]},{"id":"signature","group":"basics","name":"Email signature","kind":"plain","when":"Paste into Gmail settings once. Used under every email you write by hand.","subject":"","preheader":"","sampleSubject":"","samplePre":"","tags":[]}];
+const $ = (s) => document.querySelector(s), fr = $("#fr");
+let cur = INDEX[0], dark = false;
+function toast(t) { const el = $("#toast"); el.textContent = t; el.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 1600); }
+function show(id, push) {
+  cur = INDEX.find((x) => x.id === id) || INDEX[0];
+  document.querySelectorAll(".it").forEach((b) => b.setAttribute("aria-current", b.dataset.id === cur.id));
+  $("#sj").textContent = cur.sampleSubject || cur.name;
+  $("#ph").textContent = cur.samplePre;
+  $("#wh").textContent = cur.when || "";
+  $("#tags").innerHTML = cur.tags.map((t) => "<code>{{" + t + "}}</code>").join("") || "<code>no tags</code>";
+  fr.src = "samples/" + cur.id + ".html";
+  $("#dl").href = "templates/" + cur.id + ".html";
+  $("#dl").setAttribute("download", "fieldwise-" + cur.id + ".html");
+  fr.style.colorScheme = dark ? "dark" : "light";
+  if (push) history.replaceState(null, "", "#" + cur.id);
+  try { localStorage.setItem("fw-email", cur.id); } catch (e) {}
+}
+fr.addEventListener("load", () => { try { const d = fr.contentDocument; fr.style.height = Math.max(600, d.documentElement.scrollHeight + 4) + "px"; } catch (e) {} });
+document.addEventListener("click", async (e) => {
+  const it = e.target.closest(".it"); if (it) { show(it.dataset.id, true); if (matchMedia("(max-width:860px)").matches) it.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); return; }
+  const b = e.target.closest("[data-a]"); if (!b) return;
+  const a = b.dataset.a;
+  if (a === "wide" || a === "phone") { fr.classList.toggle("phone", a === "phone"); document.querySelectorAll(".wd").forEach((x) => x.setAttribute("aria-pressed", x.dataset.a === a)); setTimeout(() => fr.dispatchEvent(new Event("load")), 400); }
+  else if (a === "dark") { dark = !dark; b.setAttribute("aria-pressed", dark); fr.style.colorScheme = dark ? "dark" : "light"; }
+  else if (a === "tags") { const on = $("#tags").classList.toggle("on"); b.setAttribute("aria-pressed", on); }
+  else if (a === "html" || a === "text") {
+    const r = await fetch("templates/" + cur.id + "." + (a === "html" ? "html" : "txt")); const t = await r.text();
+    try { await navigator.clipboard.writeText(t); toast(a === "html" ? "html copied" : "text copied"); } catch (err) { toast("couldn't copy"); }
+  } else if (a === "rich") { // the rendered sample, ready to paste into gmail compose
+    try {
+      const d = fr.contentDocument, html = d.documentElement.outerHTML;
+      await navigator.clipboard.write([new ClipboardItem({ "text/html": new Blob([html], { type: "text/html" }), "text/plain": new Blob([d.body.innerText], { type: "text/plain" }) })]);
+      toast("copied, paste it into a new email");
+    } catch (err) { toast("couldn't copy"); }
+  }
+});
+let start = location.hash.slice(1); try { start = start || localStorage.getItem("fw-email") || ""; } catch (e) {}
+show(start);
+{ const c = document.querySelector('.it[aria-current="true"]'), n = document.querySelector(".nav"); if (c && matchMedia("(max-width:860px)").matches) n.scrollLeft = c.offsetLeft - 16; }
+</script>
+</body></html>

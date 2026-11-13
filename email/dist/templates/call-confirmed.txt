@@ -1,0 +1,29 @@
+Subject: Call booked: {{call_date}}
+
+See you on {{call_day}}.
+
+Hi {{first_name}}, thanks for making the time. Here are the details.
+
+When: {{call_date}}, {{call_time}}
+How long: 20 minutes
+Where: Google Meet, no download needed
+
+Join the call: {{meet_link}}
+
+What we’ll cover
+
+- Where your customers find you today
+- What’s slowing them down before they call or book
+- What we’d do first, how long it takes and what it costs
+
+Need a different time? Reply to this email and I’ll move it.
+
+See you then,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com
+
+--
+Fieldwise · Websites, search and brand. Grow where it counts.
+fieldwisesolutions1@gmail.com · +91 92014 79878

@@ -1,0 +1,15 @@
+Subject: Closing the loop
+
+Hi {{first_name}},
+
+I’ll stop here so I’m not filling your inbox.
+
+If more bookings from Google moves up the list later, reply “later” and I’ll check back in three months. The note stays ready whenever you want it.
+
+Wishing {{company}} a busy season.
+
+Best,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com

@@ -1,0 +1,13 @@
+Subject: Re: {{company}} on Google
+
+Hi {{first_name}}, great to hear.
+
+Would {{slot_1}} or {{slot_2}} work for a 15-minute call? Or pick any time here: {{call_link}}
+
+I’ll share my screen and show you the three changes on your own site, so there’s nothing to prepare.
+
+Thanks,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com

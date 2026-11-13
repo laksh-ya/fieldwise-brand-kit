@@ -1,0 +1,37 @@
+Subject: Welcome to Fieldwise, {{first_name}}
+
+Welcome aboard.
+
+Hi {{first_name}}, we’re glad to be working on {{company}}. Here’s how the next {{weeks}} weeks go.
+
+The plan
+
+- Week 1: We collect what we need and design the home page.
+- Week 2: You review the design. We build the rest of the site.
+- Week 3: Final checks on real phones, then we go live.
+
+What we need from you
+
+- Your logo, in any format you have
+- 10 to 20 photos of the place, the people and the work
+- Logins for your domain and current website, or the name of whoever manages them
+- Access to your Google Business Profile
+- Links to any websites you like the look of
+
+Upload your files: {{upload_link}}
+
+Your contact: {{sender_name}}, +91 92014 79878
+Email: fieldwisesolutions1@gmail.com
+Replies: Within one working day
+
+Questions at any point, just reply here.
+
+Talk soon,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com
+
+--
+Fieldwise · Websites, search and brand. Grow where it counts.
+fieldwisesolutions1@gmail.com · +91 92014 79878

@@ -1,0 +1,17 @@
+Subject: Re: {{company}} on Google
+
+Hi {{first_name}}, bringing this back up in case it got buried.
+
+The note covers:
+
+1. Why the site is slow on phones, and the fix
+2. Three changes that move {{company}} up in Google Maps
+3. A simple way to take bookings on WhatsApp
+
+It’s yours either way, no call needed. Want it?
+
+Thanks,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com

@@ -1,0 +1,13 @@
+Subject: Re: Invoice {{invoice_no}} from Fieldwise
+
+Hi {{first_name}},
+
+A quick reminder that invoice {{invoice_no}} for {{amount}} was due on {{due_date}}. The payment details are in the original email, and I’ve attached the invoice again.
+
+If it’s already on its way, thank you, and please ignore this.
+
+Thanks,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com

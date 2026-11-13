@@ -1,0 +1,13 @@
+Subject: Re: Your proposal from Fieldwise
+
+Hi {{first_name}},
+
+Checking whether you had a chance to look at the proposal.
+
+If anything doesn’t fit, whether it’s budget, timing or scope, tell me and I’ll rework it. We can also start with just the {{smallest_piece}} and add the rest later.
+
+Thanks,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com

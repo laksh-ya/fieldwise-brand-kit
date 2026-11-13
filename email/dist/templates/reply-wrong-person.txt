@@ -1,0 +1,11 @@
+Subject: Re: {{company}} on Google
+
+Hi {{first_name}}, thanks for the reply.
+
+Would you mind pointing me to whoever handles the website or marketing? I’ll keep it short with them, and I’m happy to mention you suggested it.
+
+Thanks,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com

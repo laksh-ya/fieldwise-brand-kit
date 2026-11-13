@@ -1,0 +1,31 @@
+Subject: Your proposal from Fieldwise
+
+Here’s the plan for {{company}}.
+
+Hi {{first_name}}, thanks for the call on {{call_day}}. This is the short version; the full proposal is linked below.
+
+What we’ll do
+
+{{item_1}} ({{item_1_note}}): {{item_1_price}}
+{{item_2}} ({{item_2_note}}): {{item_2_price}}
+{{item_3}} ({{item_3_note}}): {{item_3_price}}
+Hosting and care, after launch: {{care_price}} a month
+Total to build: {{total}}
+
+Timeline: {{timeline}}
+Payment: Half to start, half at launch
+Valid until: {{valid_until}}
+
+Read the full proposal: {{proposal_link}}
+
+Reply with any changes and I’ll update it the same day. When you’re ready, reply “let’s go” and we’ll send the first invoice and a kickoff date.
+
+Thanks,
+{{sender_name}}
+{{sender_role}}, Fieldwise
++91 92014 79878
+fieldwisesolutions1@gmail.com
+
+--
+Fieldwise · Websites, search and brand. Grow where it counts.
+fieldwisesolutions1@gmail.com · +91 92014 79878
